@@ -165,11 +165,15 @@
     }
 
     .mini-nav {
-      display: flex;
+      display: none;
       align-items: center;
       gap: 0.5rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+    }
+
+    @media (min-width: 768px) {
+      .mini-nav {
+        display: flex;
+      }
     }
 
     .mini-nav button {
@@ -187,6 +191,236 @@
       color: var(--teal);
       border-color: var(--beige);
       background: var(--lbeige);
+    }
+
+    /* Mobil topbar kontrolleri */
+    .topbar-mobile-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    @media (min-width: 768px) {
+      .topbar-mobile-actions {
+        display: none;
+      }
+    }
+
+    .hamburger-btn {
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--g200);
+      background: #fff;
+      border-radius: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--teal);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .hamburger-btn:hover {
+      background: var(--lbeige);
+      border-color: var(--beige);
+    }
+
+    /* Mobil menü overlay */
+    .mobile-menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .mobile-menu-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(300px, 80vw);
+      height: 100%;
+      background: #fff;
+      z-index: 100;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      box-shadow: -8px 0 30px rgba(0,0,0,0.12);
+      overflow-y: auto;
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .mobile-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--g200);
+    }
+
+    .mobile-menu-header .logo-text {
+      font-size: 1.05rem;
+    }
+
+    .mobile-menu-close {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--g200);
+      background: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      color: var(--g500);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .mobile-menu-close:hover {
+      background: #fef2f2;
+      color: #ef4444;
+      border-color: #fca5a5;
+    }
+
+    .mobile-menu-nav {
+      padding: 0.75rem 0;
+      flex: 1;
+    }
+
+    .mobile-menu-nav button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1.3rem;
+      border: none;
+      background: none;
+      color: var(--ink);
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: left;
+    }
+
+    .mobile-menu-nav button:hover {
+      background: var(--lbeige);
+      color: var(--teal);
+    }
+
+    .mobile-menu-nav button:active {
+      background: var(--beige);
+    }
+
+    .mobile-menu-nav button i {
+      width: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--teal);
+      opacity: 0.7;
+    }
+
+    .mobile-menu-footer {
+      padding: 1rem 1.2rem;
+      border-top: 1px solid var(--g200);
+      text-align: center;
+    }
+
+    .mobile-menu-footer p {
+      margin: 0;
+      font-size: 0.72rem;
+      color: var(--g500);
+      font-weight: 500;
+    }
+
+    /* Dark mode mobil menü */
+    html.dark .hamburger-btn {
+      background: #1e293b;
+      border-color: #334155;
+      color: #94a3b8;
+    }
+
+    html.dark .mobile-menu {
+      background: #0f172a;
+      box-shadow: -8px 0 30px rgba(0,0,0,0.4);
+    }
+
+    html.dark .mobile-menu-header {
+      border-color: #334155;
+    }
+
+    html.dark .mobile-menu-close {
+      border-color: #334155;
+      color: #94a3b8;
+    }
+
+    html.dark .mobile-menu-close:hover {
+      background: #3a1a1a;
+      color: #ef4444;
+      border-color: #ef4444;
+    }
+
+    html.dark .mobile-menu-nav button {
+      color: #e2e8f0;
+    }
+
+    html.dark .mobile-menu-nav button:hover {
+      background: #1e293b;
+      color: #22d3ee;
+    }
+
+    html.dark .mobile-menu-nav button i {
+      color: #22d3ee;
+    }
+
+    html.dark .mobile-menu-footer {
+      border-color: #334155;
+    }
+
+    html.dark .mobile-menu-overlay {
+      background: rgba(0,0,0,0.7);
+    }
+
+    /* Mobil: logo text'i küçült */
+    @media (max-width: 400px) {
+      .logo-text {
+        font-size: 0.95rem;
+      }
+      .logo-badge {
+        width: 30px;
+        height: 30px;
+        font-size: 0.78rem;
+      }
+    }
+
+    /* Mobil: harita pinlerini küçült */
+    @media (max-width: 640px) {
+      .map-pin-label {
+        font-size: 0.5rem;
+        padding: 0.1rem 0.25rem;
+      }
+      .map-pin-dot {
+        width: 10px;
+        height: 10px;
+      }
+      .exp-tab-btn {
+        font-size: 0.72rem;
+        padding: 0.35rem 0.65rem;
+      }
     }
 
     .card {
@@ -1116,19 +1350,64 @@
         <span class="logo-text">Bilimde Kız ve Kadın</span>
       </a>
 
+      <!-- Masaüstü navigasyon -->
       <div class="mini-nav">
         <button type="button" data-scroll="test">Test</button>
         <button type="button" data-scroll="matching">Oyun</button>
         <button type="button" data-scroll="timeline">Tarih</button>
-        <button type="button" data-scroll="experiment">Deney</button>
+        <button type="button" data-scroll="famous-experiments">Deneyler</button>
+        <button type="button" data-scroll="experiment">Tasarla</button>
         <button type="button" data-scroll="missions">Görevler</button>
         <button type="button" data-scroll="badges">Rozetler</button>
         <button id="darkToggle" type="button" aria-label="Tema değiştir" style="font-size:1rem;padding:0.4rem 0.6rem;">
           <i class="fa-solid fa-moon"></i>
         </button>
       </div>
+
+      <!-- Mobil: dark toggle + hamburger -->
+      <div class="topbar-mobile-actions">
+        <button id="darkToggleMobile" type="button" aria-label="Tema değiştir" class="hamburger-btn" style="font-size:1rem;">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="hamburgerBtn" type="button" aria-label="Menüyü aç" class="hamburger-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
   </header>
+
+  <!-- Mobil menü overlay -->
+  <div id="mobileOverlay" class="mobile-menu-overlay"></div>
+
+  <!-- Mobil menü panel -->
+  <nav id="mobileMenu" class="mobile-menu" aria-label="Mobil navigasyon">
+    <div class="mobile-menu-header">
+      <span class="logo-text">Menü</span>
+      <button id="mobileMenuClose" type="button" class="mobile-menu-close" aria-label="Menüyü kapat">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="mobile-menu-nav">
+      <button type="button" data-mobile-scroll="hero"><i class="fa-solid fa-house"></i> Ana Sayfa</button>
+      <button type="button" data-mobile-scroll="test"><i class="fa-solid fa-flask-vial"></i> Bilim İnsanı Testi</button>
+      <button type="button" data-mobile-scroll="facts"><i class="fa-solid fa-chart-line"></i> İstatistikler</button>
+      <button type="button" data-mobile-scroll="matching"><i class="fa-solid fa-puzzle-piece"></i> Eşleştirme Oyunu</button>
+      <button type="button" data-mobile-scroll="timeline"><i class="fa-solid fa-clock-rotate-left"></i> Zaman Çizelgesi</button>
+      <button type="button" data-mobile-scroll="whatif"><i class="fa-solid fa-shuffle"></i> Ya Olmasaydı?</button>
+      <button type="button" data-mobile-scroll="glossary"><i class="fa-solid fa-book"></i> Bilim Sözlüğü</button>
+      <button type="button" data-mobile-scroll="famous-experiments"><i class="fa-solid fa-microscope"></i> Tarihi Deneyler</button>
+      <button type="button" data-mobile-scroll="experiment"><i class="fa-solid fa-wand-magic-sparkles"></i> Deney Tasarla</button>
+      <button type="button" data-mobile-scroll="missions"><i class="fa-solid fa-list-check"></i> Günlük Görevler</button>
+      <button type="button" data-mobile-scroll="journal"><i class="fa-solid fa-pen-fancy"></i> Bilim Günlüğü</button>
+      <button type="button" data-mobile-scroll="badges"><i class="fa-solid fa-award"></i> Rozetler</button>
+      <button type="button" data-mobile-scroll="worldmap"><i class="fa-solid fa-earth-americas"></i> Dünya Haritası</button>
+    </div>
+
+    <div class="mobile-menu-footer">
+      <p>11 Şubat · Bilimde Kız ve Kadın Günü</p>
+    </div>
+  </nav>
 
   <main class="app-shell">
     <!-- İlham Sözü Banner -->
@@ -1535,19 +1814,57 @@
   <script>
     // Dark mode
     const darkToggle = document.getElementById("darkToggle");
+    const darkToggleMobile = document.getElementById("darkToggleMobile");
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") document.documentElement.classList.add("dark");
     function updateDarkIcon() {
       const isDark = document.documentElement.classList.contains("dark");
-      darkToggle.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+      const icon = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+      darkToggle.innerHTML = icon;
+      darkToggleMobile.innerHTML = icon;
     }
     updateDarkIcon();
-    darkToggle.addEventListener("click", () => {
+    function toggleDarkMode() {
       document.documentElement.classList.toggle("dark");
       const isDark = document.documentElement.classList.contains("dark");
       localStorage.setItem("theme", isDark ? "dark" : "light");
       if (isDark) { localStorage.setItem("badge_dark_mode", "1"); if (typeof checkBadges === "function") checkBadges(); }
       updateDarkIcon();
+    }
+    darkToggle.addEventListener("click", toggleDarkMode);
+    darkToggleMobile.addEventListener("click", toggleDarkMode);
+
+    // Mobil menü
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileOverlay = document.getElementById("mobileOverlay");
+    const mobileMenuClose = document.getElementById("mobileMenuClose");
+
+    function openMobileMenu() {
+      mobileMenu.classList.add("open");
+      mobileOverlay.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove("open");
+      mobileOverlay.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    hamburgerBtn.addEventListener("click", openMobileMenu);
+    mobileMenuClose.addEventListener("click", closeMobileMenu);
+    mobileOverlay.addEventListener("click", closeMobileMenu);
+
+    document.querySelectorAll("[data-mobile-scroll]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.dataset.mobileScroll;
+        closeMobileMenu();
+        setTimeout(() => {
+          const section = document.getElementById(targetId);
+          if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 300);
+      });
     });
 
     // İlham verici sözler
