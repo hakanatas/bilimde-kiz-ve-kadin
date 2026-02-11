@@ -1,0 +1,2760 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilimde Kız ve Kadın | 11 Şubat</title>
+
+  <!-- Tailwind CDN zorunluluğu: ana yerleşimde yardımcı utility sınıfları için kullanıyoruz. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&family=Forum&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    /* Referans verilen harf-bilmecesi tasarım diline yakın bir değişken seti */
+    :root {
+      --teal: #22495a;
+      --dteal: #1a3642;
+      --beige: #d8c7bd;
+      --lbeige: #f2ebe7;
+      --paper: #fafafa;
+      --ink: #1f2937;
+      --g100: #f3f4f6;
+      --g200: #e5e7eb;
+      --g300: #d1d5db;
+      --g500: #6b7280;
+      --accent: #6d28d9;
+      --accent2: #22d3ee;
+      --soft-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Outfit", system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: var(--beige);
+      color: var(--teal);
+    }
+
+    .bg1,
+    .bg2,
+    .bg3 {
+      position: fixed;
+      border-radius: 999px;
+      pointer-events: none;
+      z-index: -1;
+      filter: blur(100px);
+    }
+
+    .bg1 {
+      width: 520px;
+      height: 520px;
+      top: -70px;
+      right: -120px;
+      background: rgba(216, 199, 189, 0.45);
+    }
+
+    .bg2 {
+      width: 620px;
+      height: 620px;
+      left: -180px;
+      bottom: -180px;
+      background: rgba(34, 73, 90, 0.16);
+    }
+
+    .bg3 {
+      width: 480px;
+      height: 480px;
+      left: 35%;
+      top: 25%;
+      background: rgba(109, 40, 217, 0.08);
+    }
+
+    .title-font {
+      font-family: "Forum", "Caudex", serif;
+      letter-spacing: 0.01em;
+    }
+
+    .display-font {
+      font-family: "Caudex", Georgia, serif;
+    }
+
+    .app-shell {
+      max-width: 76rem;
+      margin-inline: auto;
+      padding-inline: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .app-shell {
+        padding-inline: 2rem;
+      }
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--g200);
+    }
+
+    .topbar-inner {
+      max-width: 76rem;
+      margin-inline: auto;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .topbar-inner {
+        padding: 0.75rem 2rem;
+      }
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .logo-text {
+      color: var(--teal);
+      font-family: "Forum", serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .mini-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .mini-nav button {
+      border: 1px solid var(--g200);
+      background: #fff;
+      color: var(--g500);
+      border-radius: 999px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.76rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .mini-nav button:hover {
+      color: var(--teal);
+      border-color: var(--beige);
+      background: var(--lbeige);
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid rgba(229, 231, 235, 0.85);
+      border-radius: 1rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .hero-card {
+      border-radius: 1.4rem;
+      padding: 1.6rem;
+      box-shadow: var(--soft-shadow);
+      background:
+        radial-gradient(circle at 8% 5%, rgba(34, 211, 238, 0.08), transparent 30%),
+        radial-gradient(circle at 92% 80%, rgba(109, 40, 217, 0.08), transparent 36%),
+        #fff;
+    }
+
+    @media (min-width: 768px) {
+      .hero-card {
+        padding: 2.3rem;
+      }
+    }
+
+    .hero-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid rgba(216, 199, 189, 0.9);
+      background: var(--lbeige);
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-title {
+      margin-top: 0.95rem;
+      color: var(--teal);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.05;
+      font-family: "Forum", serif;
+      font-weight: 700;
+    }
+
+    .hero-grad {
+      background: linear-gradient(90deg, var(--accent) 0%, var(--teal) 50%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      margin-top: 1rem;
+      max-width: 43ch;
+      color: var(--g500);
+      font-size: 1.02rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      border-radius: 0.8rem;
+      padding: 0.72rem 1.2rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(34, 73, 90, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: var(--dteal);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(34, 73, 90, 0.24);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      border: 1px solid var(--g200);
+      color: var(--g500);
+    }
+
+    .btn-secondary:hover {
+      background: var(--g100);
+      color: var(--teal);
+    }
+
+    .pulse {
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        box-shadow: 0 0 0 rgba(34, 73, 90, 0.15);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(34, 73, 90, 0.28);
+      }
+    }
+
+    .feature-list {
+      margin-top: 1.2rem;
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      color: #334155;
+      font-size: 0.92rem;
+    }
+
+    .feature-item i {
+      color: var(--teal);
+      margin-top: 0.2rem;
+    }
+
+    .scientist-strip {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .mini-scientist {
+      display: flex;
+      gap: 0.55rem;
+      align-items: center;
+      padding: 0.6rem;
+      border-radius: 0.9rem;
+      border: 1px solid var(--g200);
+      background: #fff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .mini-scientist:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .mini-scientist img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--beige);
+      flex-shrink: 0;
+      background: var(--lbeige);
+    }
+
+    .mini-scientist strong {
+      display: block;
+      color: var(--teal);
+      font-size: 0.83rem;
+      line-height: 1.1;
+    }
+
+    .mini-scientist span {
+      display: block;
+      color: var(--g500);
+      font-size: 0.72rem;
+      margin-top: 0.16rem;
+    }
+
+    .section-title {
+      color: var(--teal);
+      font-family: "Forum", serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.05;
+      margin: 0;
+    }
+
+    .section-sub {
+      margin-top: 0.55rem;
+      color: var(--g500);
+      max-width: 62ch;
+      font-size: 0.98rem;
+    }
+
+    .quiz-card,
+    .result-card {
+      padding: 1.25rem;
+      border-radius: 1.15rem;
+    }
+
+    @media (min-width: 768px) {
+      .quiz-card,
+      .result-card {
+        padding: 1.6rem;
+      }
+    }
+
+    .progress-wrap {
+      height: 9px;
+      border-radius: 999px;
+      background: var(--g100);
+      overflow: hidden;
+      margin-top: 0.6rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 20%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--teal) 58%, var(--accent2) 100%);
+      transition: width 0.35s ease;
+    }
+
+    .question {
+      color: #0f172a;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .option-btn {
+      width: 100%;
+      border: 1px solid var(--g200);
+      background: #fff;
+      border-radius: 0.85rem;
+      text-align: left;
+      padding: 0.8rem;
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .option-btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--beige);
+      background: #fffcfb;
+    }
+
+    .option-btn.active {
+      border-color: rgba(34, 73, 90, 0.55);
+      box-shadow: 0 0 0 3px rgba(34, 73, 90, 0.08);
+      background: rgba(242, 235, 231, 0.78);
+    }
+
+    .option-index {
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 0.55rem;
+      background: var(--lbeige);
+      color: var(--teal);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 700;
+      font-size: 0.82rem;
+      margin-top: 0.02rem;
+    }
+
+    .result-image {
+      width: 100%;
+      max-width: 290px;
+      border-radius: 1rem;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 1px solid var(--g200);
+      background: var(--lbeige);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .tag {
+      border-radius: 999px;
+      border: 1px solid rgba(34, 73, 90, 0.25);
+      background: rgba(34, 73, 90, 0.07);
+      color: var(--teal);
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 0.35rem 0.65rem;
+    }
+
+    .fact-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--g300);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--g500);
+      transition: all 0.2s ease;
+      z-index: 5;
+    }
+
+    .fact-nav:hover {
+      border-color: var(--beige);
+      color: var(--teal);
+      background: #fff;
+    }
+
+    .fact-nav.left {
+      left: 8px;
+    }
+
+    .fact-nav.right {
+      right: 8px;
+    }
+
+    .fact-track {
+      display: flex;
+      transition: transform 0.6s ease;
+      will-change: transform;
+    }
+
+    .fact-dot {
+      height: 10px;
+      width: 10px;
+      border-radius: 999px;
+      background: #cbd5e1;
+      transition: all 0.2s ease;
+    }
+
+    .fact-dot:hover {
+      background: #94a3b8;
+    }
+
+    .fact-dot.active {
+      width: 28px;
+      background: var(--teal);
+    }
+
+    .fact-card {
+      padding: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .fact-inner {
+      height: 100%;
+      border-radius: 1rem;
+      border: 1px solid var(--g200);
+      background: #fff;
+      box-shadow: var(--card-shadow);
+      padding: 1.15rem;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .fact-inner:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .fact-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 0.8rem;
+      background: var(--lbeige);
+      color: var(--teal);
+      border: 1px solid var(--beige);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fact-stat {
+      margin-top: 0.7rem;
+      margin-bottom: 0.1rem;
+      color: var(--teal);
+      font-size: 1.75rem;
+      font-family: "Caudex", serif;
+      font-weight: 700;
+      line-height: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .fact-stat.counting {
+      transform: scale(1.1);
+    }
+
+    .fact-title {
+      margin: 0;
+      color: #0f172a;
+      font-size: 1.06rem;
+      font-weight: 700;
+    }
+
+    .fact-text {
+      margin-top: 0.42rem;
+      color: var(--g500);
+      font-size: 0.9rem;
+    }
+
+    .mission-grid {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .mission-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .mission-card {
+      border-radius: 1rem;
+      border: 1px solid var(--g200);
+      background: #fff;
+      padding: 1rem;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .mission-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      width: fit-content;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--teal);
+      border: 1px solid var(--beige);
+      background: var(--lbeige);
+      border-radius: 999px;
+      padding: 0.24rem 0.58rem;
+    }
+
+    .mission-card.done {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+
+    .mission-card.done .mission-title {
+      text-decoration: line-through;
+    }
+
+    .mission-title {
+      margin: 0;
+      font-size: 1.02rem;
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    .mission-desc {
+      margin: 0;
+      color: var(--g500);
+      font-size: 0.9rem;
+    }
+
+    .mission-btn {
+      border: 1px solid var(--g200);
+      background: #fff;
+      color: var(--g500);
+      border-radius: 0.7rem;
+      padding: 0.5rem 0.72rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      transition: all 0.2s ease;
+      width: fit-content;
+      cursor: pointer;
+    }
+
+    .mission-btn:hover {
+      background: var(--g100);
+      color: var(--teal);
+    }
+
+    .mission-card.done .mission-btn {
+      border-color: #22c55e;
+      color: #15803d;
+      background: #dcfce7;
+    }
+
+    .mission-status {
+      border-radius: 999px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.78rem;
+      border: 1px solid #e2e8f0;
+      color: #64748b;
+      background: #fff;
+      transition: all 0.2s ease;
+    }
+
+    .mission-status.progress {
+      border-color: var(--beige);
+      color: var(--teal);
+      background: var(--lbeige);
+    }
+
+    .mission-status.done {
+      border-color: #86efac;
+      color: #15803d;
+      background: #f0fdf4;
+    }
+
+    .footer-card {
+      border-radius: 1.25rem;
+      padding: 1.1rem;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .footer-card {
+        padding: 1.5rem;
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 1.5rem;
+      cursor: pointer;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -1.65rem;
+      top: 0.25rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--teal);
+      border: 3px solid var(--paper);
+      box-shadow: 0 0 0 2px var(--teal);
+      transition: transform 0.2s ease;
+      z-index: 2;
+    }
+
+    .timeline-item:hover .timeline-dot {
+      transform: scale(1.3);
+    }
+
+    .timeline-year {
+      font-family: "Caudex", serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--teal);
+    }
+
+    .timeline-body {
+      margin-top: 0.25rem;
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--g200);
+      background: #fff;
+      transition: all 0.2s ease;
+    }
+
+    .timeline-item:hover .timeline-body {
+      box-shadow: var(--soft-shadow);
+      border-color: var(--beige);
+    }
+
+    .timeline-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .timeline-item.open .timeline-detail {
+      max-height: 200px;
+    }
+
+    html.dark .timeline-dot { border-color: var(--paper); }
+    html.dark .timeline-body { background: #1e293b; border-color: #334155; }
+
+    /* Senaryo (what-if) kartları */
+    .whatif-card {
+      perspective: 800px;
+      cursor: pointer;
+      min-height: 180px;
+    }
+
+    .whatif-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 180px;
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+    }
+
+    .whatif-card.flipped .whatif-inner {
+      transform: rotateY(180deg);
+    }
+
+    .whatif-front, .whatif-back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 1rem;
+      border: 1px solid var(--g200);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .whatif-front {
+      background: linear-gradient(135deg, var(--lbeige), #fff);
+    }
+
+    .whatif-back {
+      background: linear-gradient(135deg, #f0fdf4, #fff);
+      border-color: #bbf7d0;
+      transform: rotateY(180deg);
+    }
+
+    html.dark .whatif-front { background: linear-gradient(135deg, #1e293b, #0f172a); border-color: #334155; }
+    html.dark .whatif-back { background: linear-gradient(135deg, #1a3a2a, #0f172a); border-color: #22c55e44; }
+
+    .journal-entry {
+      display: flex; align-items: center; gap: 0.6rem; padding: 0.6rem 0.75rem;
+      border: 1px solid var(--g200); border-radius: 0.7rem; background: #fff; font-size: 0.88rem;
+    }
+    .journal-entry .journal-date { font-size: 0.7rem; color: var(--g500); white-space: nowrap; }
+    .journal-entry .journal-del { margin-left: auto; border: none; background: none; color: var(--g300); cursor: pointer; font-size: 0.85rem; }
+    .journal-entry .journal-del:hover { color: #ef4444; }
+    html.dark .journal-entry { background: #1e293b; border-color: #334155; }
+    html.dark input { background: #0f172a !important; color: #e2e8f0; border-color: #334155 !important; }
+
+    .badge-card {
+      text-align: center; padding: 1rem; border: 2px dashed var(--g200); border-radius: 1rem;
+      background: #fff; transition: all 0.3s ease; opacity: 0.5;
+    }
+    .badge-card.earned { border-style: solid; border-color: var(--beige); opacity: 1; box-shadow: var(--card-shadow); }
+    .badge-icon { font-size: 2rem; margin-bottom: 0.4rem; }
+    .badge-card.earned .badge-icon { animation: badgePop 0.5s ease; }
+    @keyframes badgePop { 0% { transform: scale(0.5); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+    html.dark .badge-card { background: #1e293b; border-color: #334155; }
+    html.dark .badge-card.earned { border-color: var(--beige); }
+
+    .exp-tab-btn {
+      padding: 0.45rem 0.9rem; border-radius: 999px; border: 1px solid var(--g200);
+      background: #fff; color: var(--g500); font-size: 0.82rem; font-weight: 700;
+      cursor: pointer; transition: all 0.2s ease;
+    }
+    .exp-tab-btn:hover { border-color: var(--beige); color: var(--teal); }
+    .exp-tab-btn.active { background: var(--teal); color: #fff; border-color: var(--teal); }
+    html.dark .exp-tab-btn { background: #1e293b; border-color: #334155; color: #94a3b8; }
+    html.dark .exp-tab-btn.active { background: var(--teal); color: #fff; }
+
+    .exp-step-item {
+      display: flex; gap: 0.7rem; align-items: flex-start; padding: 0.7rem;
+      border: 1px solid var(--g200); border-radius: 0.75rem; background: #fff;
+      transition: all 0.2s ease; cursor: pointer;
+    }
+    .exp-step-item:hover { border-color: var(--beige); box-shadow: var(--card-shadow); }
+    .exp-step-item.open { border-color: var(--teal); background: rgba(34,73,90,0.03); }
+    .exp-step-num {
+      width: 28px; height: 28px; border-radius: 50%; background: var(--lbeige); color: var(--teal);
+      display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem;
+      flex-shrink: 0; border: 1px solid var(--beige);
+    }
+    .exp-step-item.open .exp-step-num { background: var(--teal); color: #fff; }
+    .exp-step-detail { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .exp-step-item.open .exp-step-detail { max-height: 150px; }
+    html.dark .exp-step-item { background: #1e293b; border-color: #334155; }
+    html.dark .exp-step-item.open { background: rgba(34,73,90,0.15); border-color: var(--teal); }
+
+    .map-pin {
+      position: absolute; transform: translate(-50%, -100%); cursor: pointer; z-index: 3;
+      transition: transform 0.2s ease;
+    }
+    .map-pin:hover { transform: translate(-50%, -100%) scale(1.15); z-index: 10; }
+    .map-pin-dot {
+      width: 14px; height: 14px; border-radius: 50%; background: var(--teal);
+      border: 2.5px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      margin: 0 auto;
+    }
+    .map-pin-label {
+      background: var(--teal); color: #fff; font-size: 0.65rem; font-weight: 700;
+      padding: 0.15rem 0.4rem; border-radius: 4px; white-space: nowrap;
+      margin-bottom: 3px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .map-pin.active .map-pin-dot { background: var(--accent); border-color: #fff; }
+    .map-pin.active .map-pin-label { background: var(--accent); }
+
+    @keyframes pinBounce {
+      0%, 100% { transform: translate(-50%, -100%); }
+      50% { transform: translate(-50%, -108%); }
+    }
+    .map-pin.active { animation: pinBounce 0.6s ease; }
+
+    html.dark select { background: #0f172a !important; color: #e2e8f0; border-color: #334155 !important; }
+
+    .exp-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--g200); transition: all 0.2s ease;
+    }
+    .exp-dot.active { width: 28px; border-radius: 999px; background: var(--teal); }
+
+    html.dark textarea { background: #0f172a !important; color: #e2e8f0; border-color: #334155 !important; }
+
+    .glossary-item {
+      padding: 0.75rem;
+      border: 1px solid var(--g200);
+      border-radius: 0.85rem;
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .glossary-item:hover { border-color: var(--beige); box-shadow: var(--card-shadow); }
+    .glossary-item .glossary-def {
+      max-height: 0; overflow: hidden; transition: max-height 0.35s ease, margin-top 0.35s ease; margin-top: 0;
+    }
+    .glossary-item.open .glossary-def { max-height: 120px; margin-top: 0.5rem; }
+    html.dark .glossary-item { background: #1e293b; border-color: #334155; }
+
+    .match-item {
+      padding: 0.65rem 0.8rem;
+      border: 2px solid var(--g200);
+      border-radius: 0.75rem;
+      background: #fff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .match-item:hover { border-color: var(--beige); background: var(--lbeige); }
+    .match-item.selected { border-color: var(--teal); background: rgba(34,73,90,0.08); box-shadow: 0 0 0 3px rgba(34,73,90,0.1); }
+    .match-item.correct { border-color: #22c55e; background: #f0fdf4; color: #15803d; pointer-events: none; }
+    .match-item.wrong { border-color: #ef4444; background: #fef2f2; animation: shake 0.4s ease; }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+
+    html.dark .match-item { background: #1e293b; border-color: #334155; color: #e2e8f0; }
+    html.dark .match-item:hover { background: #334155; }
+    html.dark .match-item.selected { background: rgba(34,73,90,0.2); }
+    html.dark .match-item.correct { background: #1a3a2a; border-color: #22c55e; color: #86efac; }
+    html.dark .match-item.wrong { background: #3a1a1a; border-color: #ef4444; }
+
+    html.dark {
+      --paper: #0f172a;
+      --ink: #e2e8f0;
+      --g100: #1e293b;
+      --g200: #334155;
+      --g300: #475569;
+      --g500: #94a3b8;
+      --lbeige: #1e293b;
+      --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      --soft-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    html.dark body {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    html.dark .topbar {
+      background: rgba(15, 23, 42, 0.92);
+      border-bottom-color: #334155;
+    }
+
+    html.dark .card,
+    html.dark .hero-card,
+    html.dark .fact-inner,
+    html.dark .mission-card,
+    html.dark .footer-card,
+    html.dark .option-btn,
+    html.dark .mini-scientist {
+      background: #1e293b;
+      border-color: #334155;
+      color: #e2e8f0;
+    }
+
+    html.dark .hero-card {
+      background:
+        radial-gradient(circle at 8% 5%, rgba(34, 211, 238, 0.06), transparent 30%),
+        radial-gradient(circle at 92% 80%, rgba(109, 40, 217, 0.06), transparent 36%),
+        #1e293b;
+    }
+
+    html.dark .option-btn:hover {
+      background: #334155;
+      border-color: var(--beige);
+    }
+
+    html.dark .option-btn.active {
+      background: rgba(34, 73, 90, 0.3);
+    }
+
+    html.dark .btn-secondary {
+      background: #1e293b;
+      border-color: #475569;
+      color: #94a3b8;
+    }
+
+    html.dark .btn-secondary:hover {
+      background: #334155;
+      color: #e2e8f0;
+    }
+
+    html.dark .mini-nav button {
+      background: #1e293b;
+      border-color: #334155;
+      color: #94a3b8;
+    }
+
+    html.dark .mini-nav button:hover {
+      background: #334155;
+      color: #e2e8f0;
+    }
+
+    html.dark .question,
+    html.dark .fact-title,
+    html.dark .mission-title {
+      color: #f1f5f9;
+    }
+
+    html.dark .progress-wrap {
+      background: #334155;
+    }
+
+    html.dark .fact-nav {
+      background: rgba(30, 41, 59, 0.9);
+      border-color: #475569;
+      color: #94a3b8;
+    }
+
+    html.dark .fact-nav:hover {
+      background: #334155;
+      color: #e2e8f0;
+    }
+
+    html.dark .mission-card.done {
+      background: #1a3a2a;
+      border-color: #22c55e44;
+    }
+
+    html.dark .mission-btn {
+      background: #1e293b;
+      border-color: #475569;
+      color: #94a3b8;
+    }
+
+    html.dark .bg1 { background: rgba(216, 199, 189, 0.08); }
+    html.dark .bg2 { background: rgba(34, 73, 90, 0.06); }
+    html.dark .bg3 { background: rgba(109, 40, 217, 0.04); }
+
+    /* PNG harita dark mode */
+    html.dark #mapImage { filter: brightness(0.7) contrast(1.1); }
+    html.dark .map-pin-dot { background: #22d3ee; border-color: #1e293b; }
+    html.dark .map-pin-label { background: #22d3ee; color: #0f172a; }
+    html.dark .map-pin.active .map-pin-dot { background: var(--accent); }
+    html.dark .map-pin.active .map-pin-label { background: var(--accent); color: #fff; }
+
+    /* Ünlü deneyler dark mode */
+    html.dark #expWhy { background: linear-gradient(135deg, rgba(34,73,90,0.2), rgba(109,40,217,0.1)); border-color: rgba(34,73,90,0.3); }
+    html.dark #expWhy p, html.dark #expWhyText { color: #cbd5e1; }
+    html.dark #expToday { background: rgba(22,163,74,0.1); border-color: rgba(34,197,94,0.2); }
+    html.dark #expTodayText { color: #cbd5e1; }
+    html.dark #expThink { color: #cbd5e1; }
+    html.dark #expDetailCard .exp-step-detail p { color: #94a3b8; }
+    html.dark #mapDetail { background: #1e293b; border-color: #334155; }
+    html.dark #mapBio { color: #94a3b8; }
+
+    /* Erişilebilirlik */
+    .skip-link {
+      position: absolute; top: -100%; left: 1rem; z-index: 9999;
+      background: var(--teal); color: #fff; padding: 0.6rem 1.2rem; border-radius: 0 0 0.5rem 0.5rem;
+      font-weight: 700; font-size: 0.85rem; text-decoration: none; transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 0; }
+
+    *:focus-visible {
+      outline: 3px solid var(--accent2);
+      outline-offset: 2px;
+    }
+
+    button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+      outline: 3px solid var(--accent2);
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#hero" class="skip-link">Ana içeriğe geç</a>
+  <div class="bg1"></div>
+  <div class="bg2"></div>
+  <div class="bg3"></div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#hero" class="logo-wrap" aria-label="Ana sayfa">
+        <span class="logo-badge">11</span>
+        <span class="logo-text">Bilimde Kız ve Kadın</span>
+      </a>
+
+      <div class="mini-nav">
+        <button type="button" data-scroll="test">Test</button>
+        <button type="button" data-scroll="matching">Oyun</button>
+        <button type="button" data-scroll="timeline">Tarih</button>
+        <button type="button" data-scroll="experiment">Deney</button>
+        <button type="button" data-scroll="missions">Görevler</button>
+        <button type="button" data-scroll="badges">Rozetler</button>
+        <button id="darkToggle" type="button" aria-label="Tema değiştir" style="font-size:1rem;padding:0.4rem 0.6rem;">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <!-- İlham Sözü Banner -->
+    <div id="inspirationBanner" class="card p-3 md:p-4 mt-4 mb-2 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left" style="border-left:4px solid var(--teal);background:linear-gradient(90deg,var(--lbeige),#fff);">
+      <div class="flex items-center gap-2.5">
+        <span style="font-size:1.4rem;">&#10024;</span>
+        <div>
+          <p id="quoteText" class="m-0 text-sm md:text-base font-semibold text-slate-700" style="font-style:italic;"></p>
+          <p id="quoteAuthor" class="m-0 text-xs text-slate-500 mt-0.5 font-bold"></p>
+        </div>
+      </div>
+      <button id="newQuoteBtn" type="button" class="btn-secondary text-xs" style="white-space:nowrap;padding:0.35rem 0.7rem;">
+        <i class="fa-solid fa-shuffle"></i> Yeni Söz
+      </button>
+    </div>
+
+    <!-- Hero -->
+    <section id="hero" class="reveal visible py-12 md:py-16">
+      <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-5 md:gap-6">
+        <article class="hero-card card">
+          <span class="hero-chip">
+            <i class="fa-solid fa-star"></i>
+            11 Şubat Uluslararası Gün
+          </span>
+          <h1 class="hero-title">
+            Bilimin Işığı
+            <span class="hero-grad">Sensin</span>
+          </h1>
+          <p class="hero-sub">
+            Merak ettiğin her soru seni geleceğin teknolojilerine yaklaştırır. Bu mini uygulama ile
+            bilim karakterini keşfet, ilham verici bilim kadınlarını tanı ve kendi yol haritanı oluştur.
+          </p>
+
+          <div class="mt-5 flex flex-wrap gap-2.5">
+            <button id="startBtn" class="btn-primary pulse" type="button">
+              Keşfetmeye Başla
+              <i class="fa-solid fa-arrow-down"></i>
+            </button>
+            <button class="btn-secondary" type="button" data-scroll="missions">
+              Günün Görevi
+              <i class="fa-solid fa-list-check"></i>
+            </button>
+          </div>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <i class="fa-solid fa-rocket"></i>
+              <span>Bilimde farklı bakış açıları, daha güçlü çözümler üretir.</span>
+            </div>
+            <div class="feature-item">
+              <i class="fa-solid fa-microscope"></i>
+              <span>Ortaokul ve lise dönemi, bilimsel merakın en hızlı büyüdüğü dönemdir.</span>
+            </div>
+            <div class="feature-item">
+              <i class="fa-solid fa-earth-europe"></i>
+              <span>Bilimin geleceğini inşa edecek yeni fikirlerin kaynağı sensin.</span>
+            </div>
+          </div>
+        </article>
+
+        <aside class="card p-4 md:p-5">
+          <h2 class="title-font text-2xl text-[var(--teal)] m-0">Öne Çıkan Bilim Kadınları</h2>
+          <p class="text-sm text-slate-500 mt-1.5 mb-4">Testte eşleşebileceğin ilham veren isimler</p>
+          <div id="scientistStrip" class="scientist-strip"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section id="test" class="reveal py-4 pb-14 md:pb-20">
+      <h2 class="section-title">Bilim Karakterini Keşfet</h2>
+      <p class="section-sub">
+        5 soruluk testi bitir, sana en çok benzeyen bilim insanını gör. Sonuç kartında fotoğraf, alan ve güçlü yönlerin görünecek.
+      </p>
+
+      <div class="mt-5 grid lg:grid-cols-[1.2fr_0.8fr] gap-5 md:gap-6 items-start">
+        <article id="quizCard" class="card quiz-card">
+          <div class="flex items-center justify-between text-sm text-slate-500">
+            <span id="questionCounter">Soru 1 / 5</span>
+            <span id="progressPercent" class="display-font text-[var(--teal)] font-bold">%20</span>
+          </div>
+          <div class="progress-wrap">
+            <div id="progressBar" class="progress-fill"></div>
+          </div>
+
+          <h3 id="questionText" class="question"></h3>
+          <div id="optionsContainer" class="grid gap-2.5 mt-4"></div>
+
+          <div class="mt-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5">
+            <p id="selectionHint" class="text-sm text-slate-500 m-0" aria-live="polite">Devam etmek için bir seçenek seç.</p>
+            <button id="nextBtn" type="button" disabled class="btn-primary disabled:opacity-50 disabled:cursor-not-allowed">
+              Sonraki Soru
+            </button>
+          </div>
+        </article>
+
+        <aside id="resultCard" class="card result-card lg:sticky lg:top-24">
+          <div id="resultPlaceholder">
+            <p class="m-0 text-lg font-bold text-slate-900">Sonucun burada görünecek</p>
+            <p class="mt-2 text-slate-500">
+              Tüm soruları tamamladığında eşleştiğin bilim insanının fotoğrafını, uzmanlık alanını ve güçlü yönlerini burada göreceksin.
+            </p>
+          </div>
+
+          <div id="resultContent" class="hidden">
+            <p class="text-xs tracking-wide font-bold text-[var(--teal)]">EŞLEŞMEN</p>
+            <img id="resultImage" class="result-image mt-2" src="" alt="Bilim insanı portresi">
+            <h3 id="resultName" class="title-font text-3xl text-[var(--teal)] mt-3 mb-0"></h3>
+            <p id="resultField" class="mt-1 text-sm text-slate-600 font-semibold"></p>
+            <p id="resultDescription" class="mt-3 text-slate-600"></p>
+            <div id="resultTraits" class="flex flex-wrap gap-1.5 mt-4"></div>
+            <button id="shareBtn" type="button" class="btn-secondary mt-5" style="font-size:0.82rem;">
+              <i class="fa-solid fa-download"></i> Sonuç Kartını İndir
+            </button>
+            <canvas id="shareCanvas" class="hidden"></canvas>
+            <button id="reviewBtn" type="button" class="btn-primary mt-5" style="font-size:0.82rem;">
+              <i class="fa-solid fa-magnifying-glass"></i> Cevaplarını İncele
+            </button>
+            <div id="reviewPanel" class="hidden mt-4" style="border-top:1px solid var(--g200);padding-top:0.75rem;">
+              <p class="text-xs font-bold text-[var(--teal)] mb-2">CEVAPLARIN</p>
+              <div id="reviewList" class="grid gap-2"></div>
+            </div>
+            <button id="restartBtn" type="button" class="btn-secondary mt-5">
+              Testi Yeniden Çöz
+            </button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Facts -->
+    <section id="facts" class="reveal py-4 pb-14 md:pb-20">
+      <div class="flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <h2 class="section-title">Biliyor muydunuz?</h2>
+          <p class="section-sub">Bilimde kadınların başarılarına dair kısa ve dikkat çekici bilgiler.</p>
+        </div>
+        <span class="text-xs sm:text-sm rounded-full border border-[var(--beige)] bg-[var(--lbeige)] text-[var(--teal)] px-3 py-1.5 font-semibold">
+          Kaydırarak devam et
+        </span>
+      </div>
+
+      <div class="relative mt-5">
+        <button id="prevFact" type="button" class="fact-nav left" aria-label="Önceki bilgi kartı">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div id="factViewport" class="overflow-hidden rounded-2xl">
+          <div id="factTrack" class="fact-track"></div>
+        </div>
+
+        <button id="nextFact" type="button" class="fact-nav right" aria-label="Sonraki bilgi kartı">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div id="factDots" class="mt-4 flex justify-center gap-1.5"></div>
+    </section>
+
+    <!-- Eşleştirme Oyunu -->
+    <section id="matching" class="reveal py-4 pb-14 md:pb-20">
+      <h2 class="section-title">Eşleştirme Oyunu</h2>
+      <p class="section-sub">Bilim kadınlarını buluşlarıyla eşleştir. Doğru eşleşmeleri bulmaya çalış!</p>
+
+      <div class="card p-4 md:p-5 mt-5">
+        <div class="flex items-center justify-between mb-4">
+          <p class="m-0 text-sm text-slate-500">Skor: <strong id="matchScore" class="text-[var(--teal)] display-font text-lg">0/5</strong></p>
+          <button id="resetMatch" type="button" class="btn-secondary" style="font-size:0.78rem;padding:0.35rem 0.7rem;">
+            <i class="fa-solid fa-rotate-right"></i> Sıfırla
+          </button>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <p class="text-xs font-bold text-[var(--teal)] mb-2">BİLİM KADINLARI</p>
+            <div id="matchNames" class="grid gap-2"></div>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-[var(--teal)] mb-2">BULUŞLAR</p>
+            <div id="matchDiscoveries" class="grid gap-2"></div>
+          </div>
+        </div>
+        <p id="matchFeedback" class="mt-4 text-sm font-semibold text-center" style="min-height:1.4em;" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Zaman Çizelgesi -->
+    <section id="timeline" class="reveal py-4 pb-14 md:pb-20">
+      <h2 class="section-title">Bilimde Kadınların Zaman Çizelgesi</h2>
+      <p class="section-sub">Tarih boyunca kadın bilim insanlarının önemli buluş ve başarıları.</p>
+      <div id="timelineContainer" class="mt-6" style="position:relative;padding-left:2rem;">
+        <div style="position:absolute;left:0.75rem;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--teal),var(--accent2));border-radius:999px;"></div>
+      </div>
+    </section>
+
+    <!-- Senaryo Kartları -->
+    <section id="whatif" class="reveal py-4 pb-14 md:pb-20">
+      <h2 class="section-title">Bu Buluş Olmasaydı?</h2>
+      <p class="section-sub">Kartları çevir ve bu buluşların dünyamızı nasıl değiştirdiğini keşfet.</p>
+      <div id="whatifGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5"></div>
+    </section>
+
+    <!-- Bilim Sözlüğü -->
+    <section id="glossary" class="reveal py-4 pb-14 md:pb-20">
+      <h2 class="section-title">Bilim Sözlüğü</h2>
+      <p class="section-sub">Bu sayfada geçen bilimsel terimleri öğren. Bir terime tıkla!</p>
+      <div id="glossaryGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-5"></div>
+    </section>
+
+    <!-- Deney Tasarla -->
+    <section id="experiment" class="reveal py-4 pb-14 md:pb-20">
+      <h2 class="section-title">Bir Deney Tasarla</h2>
+      <p class="section-sub">Bilimsel yöntemi kullanarak adım adım kendi deneyini tasarla!</p>
+
+      <div class="card p-4 md:p-5 mt-5">
+        <div id="expSteps">
+          <!-- Step 1: Soru -->
+          <div class="exp-step" data-step="1">
+            <p class="text-xs font-bold text-[var(--teal)] mb-1"><i class="fa-solid fa-1"></i> ARAŞTIRMA SORUSU</p>
+            <p class="text-sm text-slate-500 mb-2">Merak ettiğin bir soru yaz. Ne öğrenmek istiyorsun?</p>
+            <textarea id="expQ" rows="2" placeholder="Örn: Bitkiler müzik dinlerse daha hızlı büyür mü?" class="w-full p-2.5 rounded-lg border border-[var(--g200)] text-sm resize-none" style="font-family:inherit;background:var(--lbeige);"></textarea>
+          </div>
+          <!-- Step 2: Hipotez -->
+          <div class="exp-step hidden" data-step="2">
+            <p class="text-xs font-bold text-[var(--teal)] mb-1"><i class="fa-solid fa-2"></i> HİPOTEZ</p>
+            <p class="text-sm text-slate-500 mb-2">Sonucu tahmin et. "Bence ... olacak çünkü ..."</p>
+            <textarea id="expH" rows="2" placeholder="Bence müzik dinleyen bitkiler daha hızlı büyüyecek çünkü..." class="w-full p-2.5 rounded-lg border border-[var(--g200)] text-sm resize-none" style="font-family:inherit;background:var(--lbeige);"></textarea>
+          </div>
+          <!-- Step 3: Malzeme -->
+          <div class="exp-step hidden" data-step="3">
+            <p class="text-xs font-bold text-[var(--teal)] mb-1"><i class="fa-solid fa-3"></i> MALZEMELER</p>
+            <p class="text-sm text-slate-500 mb-2">Deneyin için nelere ihtiyacın var?</p>
+            <textarea id="expM" rows="2" placeholder="2 saksı çiçek, su, hoparlör, cetvel..." class="w-full p-2.5 rounded-lg border border-[var(--g200)] text-sm resize-none" style="font-family:inherit;background:var(--lbeige);"></textarea>
+          </div>
+          <!-- Step 4: Adımlar -->
+          <div class="exp-step hidden" data-step="4">
+            <p class="text-xs font-bold text-[var(--teal)] mb-1"><i class="fa-solid fa-4"></i> DENEY ADIMLARI</p>
+            <p class="text-sm text-slate-500 mb-2">Deneyi nasıl yapacağını sırayla yaz.</p>
+            <textarea id="expS" rows="3" placeholder="1. İki saksıyı aynı yere koy&#10;2. Birine müzik aç, diğerini sessiz bırak&#10;3. Her gün boylarını ölç..." class="w-full p-2.5 rounded-lg border border-[var(--g200)] text-sm resize-none" style="font-family:inherit;background:var(--lbeige);"></textarea>
+          </div>
+          <!-- Step 5: Sonuç tahmini -->
+          <div class="exp-step hidden" data-step="5">
+            <p class="text-xs font-bold text-[var(--teal)] mb-1"><i class="fa-solid fa-5"></i> BEKLENEN SONUÇ</p>
+            <p class="text-sm text-slate-500 mb-2">Deneyin sonunda ne bulmayı bekliyorsun?</p>
+            <textarea id="expR" rows="2" placeholder="Müzik dinleyen bitkinin boyunun daha uzun olmasını bekliyorum." class="w-full p-2.5 rounded-lg border border-[var(--g200)] text-sm resize-none" style="font-family:inherit;background:var(--lbeige);"></textarea>
+          </div>
+        </div>
+
+        <!-- Progress dots -->
+        <div class="flex justify-center gap-1.5 mt-4 mb-3">
+          <span class="exp-dot active" data-dot="1"></span>
+          <span class="exp-dot" data-dot="2"></span>
+          <span class="exp-dot" data-dot="3"></span>
+          <span class="exp-dot" data-dot="4"></span>
+          <span class="exp-dot" data-dot="5"></span>
+        </div>
+
+        <div class="flex justify-between items-center">
+          <button id="expPrev" type="button" class="btn-secondary text-sm" disabled>
+            <i class="fa-solid fa-arrow-left"></i> Geri
+          </button>
+          <button id="expNext" type="button" class="btn-primary text-sm">
+            İleri <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Summary -->
+        <div id="expSummary" class="hidden mt-5 p-4 rounded-xl" style="background:linear-gradient(135deg,var(--lbeige),#fff);border:1px solid var(--beige);">
+          <p class="text-xs font-bold text-[var(--teal)] mb-2"><i class="fa-solid fa-flask"></i> DENEYİN ÖZETİ</p>
+          <div id="expSummaryContent" class="text-sm text-slate-600 grid gap-2"></div>
+          <button id="expReset" type="button" class="btn-secondary mt-3 text-xs">
+            <i class="fa-solid fa-rotate-right"></i> Yeni Deney Tasarla
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- More: Missions -->
+    <section id="missions" class="reveal py-4 pb-16 md:pb-20">
+      <h2 class="section-title">Bugünün Bilim Görevleri</h2>
+      <p class="section-sub">
+        Gün içinde bu mini adımlardan en az birini tamamla. Tüm görevleri bitirdiğinde sayaç seni tebrik edecek.
+      </p>
+
+        <div class="card p-4 md:p-5 mt-5">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <p class="m-0 text-slate-600">
+            Tamamlanan görev:
+            <strong id="missionCount" class="text-[var(--teal)] display-font text-xl">0/3</strong>
+          </p>
+          <span id="missionStatus" class="mission-status" aria-live="polite">Hadi başlayalım</span>
+        </div>
+
+        <div id="missionGrid" class="mission-grid"></div>
+      </div>
+    </section>
+    <!-- Bilim Günlüğü -->
+    <section id="journal" class="reveal py-4 pb-14 md:pb-20">
+      <h2 class="section-title">Bilim Günlüğüm</h2>
+      <p class="section-sub">Her gün öğrendiğin bir şeyi veya bir hedefini yaz. Kayıtların bu tarayıcıda saklanır.</p>
+
+      <div class="card p-4 md:p-5 mt-5">
+        <div class="flex flex-col sm:flex-row gap-2.5">
+          <input id="journalInput" type="text" placeholder="Bugün ne öğrendin?" class="flex-1 p-2.5 rounded-lg border border-[var(--g200)] text-sm" style="font-family:inherit;background:var(--lbeige);">
+          <button id="journalAdd" type="button" class="btn-primary text-sm" style="white-space:nowrap;">
+            <i class="fa-solid fa-plus"></i> Ekle
+          </button>
+        </div>
+        <div id="journalEntries" class="grid gap-2 mt-4"></div>
+        <p id="journalEmpty" class="text-sm text-slate-400 text-center mt-3 hidden">Henüz bir kayıt yok. İlk notunu ekle!</p>
+      </div>
+    </section>
+
+    <!-- Başarı Rozetleri -->
+    <section id="badges" class="reveal py-4 pb-14 md:pb-20">
+      <h2 class="section-title">Başarı Rozetlerim</h2>
+      <p class="section-sub">Etkinlikleri tamamladıkça rozetler kazan!</p>
+      <div id="badgeGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mt-5"></div>
+    </section>
+
+    <!-- Ünlü Deneyler -->
+    <section id="famous-experiments" class="reveal py-4 pb-14 md:pb-20">
+      <h2 class="section-title">Tarihi Değiştiren Deneyler</h2>
+      <p class="section-sub">Bu kadın bilim insanları hangi deneyleri yaptı? Neden bu kadar önemliydi? Adım adım keşfet!</p>
+
+      <div class="flex flex-wrap gap-2 mt-5 mb-4">
+        <button type="button" class="exp-tab-btn active" data-exp="0">Marie Curie</button>
+        <button type="button" class="exp-tab-btn" data-exp="1">Rosalind Franklin</button>
+        <button type="button" class="exp-tab-btn" data-exp="2">Tu Youyou</button>
+        <button type="button" class="exp-tab-btn" data-exp="3">Chien-Shiung Wu</button>
+      </div>
+
+      <div id="expDetailCard" class="card p-5 md:p-6">
+        <!-- Üst bilgi -->
+        <div class="flex flex-wrap items-start gap-4 mb-4">
+          <div style="width:56px;height:56px;border-radius:1rem;background:var(--lbeige);border:1px solid var(--beige);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;" id="expEmoji"></div>
+          <div class="flex-1">
+            <h3 id="expTitle" class="m-0 text-xl font-bold" style="color:var(--teal);font-family:Forum,serif;"></h3>
+            <p id="expScientist" class="m-0 text-sm text-slate-500 mt-0.5"></p>
+            <p id="expYear" class="m-0 text-xs font-bold mt-1" style="color:var(--accent);"></p>
+          </div>
+        </div>
+
+        <!-- Neden önemli -->
+        <div id="expWhy" class="p-3 rounded-xl mb-4" style="background:linear-gradient(135deg, rgba(34,73,90,0.06), rgba(109,40,217,0.04));border:1px solid rgba(34,73,90,0.1);">
+          <p class="m-0 text-xs font-bold mb-1" style="color:var(--teal);"><i class="fa-solid fa-lightbulb"></i> NEDEN ÖNEMLİ?</p>
+          <p id="expWhyText" class="m-0 text-sm text-slate-600"></p>
+        </div>
+
+        <!-- Adım adım deney süreci -->
+        <p class="text-xs font-bold mb-2" style="color:var(--teal);"><i class="fa-solid fa-list-ol"></i> DENEY SÜRECİ</p>
+        <div id="expStepsContainer" class="grid gap-2 mb-4"></div>
+
+        <!-- Bugün ne işe yarıyor -->
+        <div id="expToday" class="p-3 rounded-xl" style="background:#f0fdf4;border:1px solid #bbf7d0;">
+          <p class="m-0 text-xs font-bold mb-1" style="color:#16a34a;"><i class="fa-solid fa-globe"></i> BUGÜN NE İŞE YARIYOR?</p>
+          <p id="expTodayText" class="m-0 text-sm text-slate-600"></p>
+        </div>
+
+        <!-- Düşünme sorusu -->
+        <div class="mt-4 p-3 rounded-xl" style="background:rgba(109,40,217,0.05);border:1px solid rgba(109,40,217,0.12);">
+          <p class="m-0 text-xs font-bold mb-1" style="color:var(--accent);"><i class="fa-solid fa-brain"></i> SEN DÜŞÜN</p>
+          <p id="expThink" class="m-0 text-sm text-slate-600" style="font-style:italic;"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rol Model Haritası -->
+    <section id="worldmap" class="reveal py-4 pb-14 md:pb-20">
+      <h2 class="section-title">Bilim Kadınları Dünya Haritası</h2>
+      <p class="section-sub">Harita üzerindeki pinlere tıklayarak bilim kadınlarını keşfet!</p>
+
+      <div class="card p-4 md:p-5 mt-5">
+        <div id="mapContainer" style="position:relative;width:100%;border-radius:0.75rem;overflow:hidden;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Equirectangular-projection.jpg/1280px-Equirectangular-projection.jpg" alt="Dünya Haritası" style="width:100%;display:block;border-radius:0.75rem;opacity:0.85;" id="mapImage" crossorigin="anonymous">
+          <!-- Pinler JS ile eklenecek -->
+        </div>
+
+        <!-- Bilgi paneli -->
+        <div id="mapDetail" class="hidden mt-4 p-4 rounded-xl" style="background:var(--lbeige);border:1px solid var(--beige);">
+          <div class="flex items-center gap-3 mb-2">
+            <div style="width:42px;height:42px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;">
+              <i class="fa-solid fa-location-dot" style="color:#fff;"></i>
+            </div>
+            <div>
+              <p id="mapName" class="m-0 font-bold text-lg" style="color:var(--teal);"></p>
+              <p id="mapCountry" class="m-0 text-sm text-slate-500"></p>
+            </div>
+          </div>
+          <p id="mapBio" class="m-0 text-sm text-slate-600"></p>
+          <div id="mapTags" class="flex flex-wrap gap-1.5 mt-3"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-shell pb-8 md:pb-12">
+    <div class="card footer-card">
+      <p class="title-font text-2xl text-[var(--teal)] m-0">Dünyayı değiştirmek senin elinde.</p>
+      <p class="text-slate-500 mt-1.5 mb-0">Soru sormaya devam et. Bilimin geleceğine kendi imzanı at.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dark mode
+    const darkToggle = document.getElementById("darkToggle");
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") document.documentElement.classList.add("dark");
+    function updateDarkIcon() {
+      const isDark = document.documentElement.classList.contains("dark");
+      darkToggle.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+    }
+    updateDarkIcon();
+    darkToggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      if (isDark) { localStorage.setItem("badge_dark_mode", "1"); if (typeof checkBadges === "function") checkBadges(); }
+      updateDarkIcon();
+    });
+
+    // İlham verici sözler
+    const inspirationQuotes = [
+      { text: "Hayatta korkacak bir şey yok, sadece anlaşılacak şeyler var.", author: "Marie Curie" },
+      { text: "Bilim yalnızca bir bilgi disiplini değil, aynı zamanda bir düşünme biçimidir.", author: "Carl Sagan" },
+      { text: "Bir bilim insanı için en güzel deneyim, yeni bir şeyle karşılaşmaktır.", author: "Rosalind Franklin" },
+      { text: "Kendinizi sınırlamayın. Birçok insan, yapabileceklerinin sınırlı olduğunu düşünür.", author: "Katherine Johnson" },
+      { text: "Hayal gücü bilgiden daha önemlidir. Bilgi sınırlıdır; hayal gücü dünyayı sarar.", author: "Albert Einstein" },
+      { text: "İnsanları araştırma yapmaya iten şey meraktır, merak da bilimin motorudur.", author: "Tu Youyou" },
+      { text: "Geleceği tahmin etmenin en iyi yolu onu icat etmektir.", author: "Alan Kay" },
+      { text: "Başarısızlık bir seçenek değildir, başarısızlık sadece bilgi edinme sürecinin bir parçasıdır.", author: "Mae Jemison" },
+      { text: "Her büyük ilerleme, cesur bir hayal gücünün ürünüdür.", author: "John Dewey" },
+      { text: "Asla bir sınıra ulaştığınızı düşünmeyin; sınırlar yalnızca zihnimizdedir.", author: "Maryam Mirzakhani" }
+    ];
+
+    function showRandomQuote() {
+      const q = inspirationQuotes[Math.floor(Math.random() * inspirationQuotes.length)];
+      document.getElementById("quoteText").textContent = `"${q.text}"`;
+      document.getElementById("quoteAuthor").textContent = `— ${q.author}`;
+    }
+    showRandomQuote();
+    document.getElementById("newQuoteBtn").addEventListener("click", showRandomQuote);
+
+    // Bilim insanı verileri: sonuç kartında fotoğraf + açıklama göstermek için kullanıyoruz.
+    const scientists = {
+      curie: {
+        name: "Marie Curie",
+        field: "Fizik ve Kimya Öncüsü",
+        description: "Azimli, meraklı ve araştırmacısın. Zorlu konularda yılmadan ilerleyip gerçek keşiflere ulaşabilecek bir profilsin.",
+        traits: ["Azimli", "Araştırmacı", "Sabırlı", "Detaycı"],
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Marie_Curie_c1920.jpg/640px-Marie_Curie_c1920.jpg"
+      },
+      lovelace: {
+        name: "Ada Lovelace",
+        field: "İlk Bilgisayar Programcısı",
+        description: "Hayal gücü ve analitik düşünceyi birleştiriyorsun. Teknolojiyi sadece kullanmıyor, yeni sistemler tasarlamaya da yatkınsın.",
+        traits: ["Yaratıcı", "Analitik", "Vizyoner", "Üretken"],
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ada_Lovelace_portrait.jpg/640px-Ada_Lovelace_portrait.jpg"
+      },
+      johnson: {
+        name: "Katherine Johnson",
+        field: "NASA Matematik Dehası",
+        description: "Büyük problemleri adım adım çözmeyi seviyorsun. Doğruluk, disiplin ve sistematik düşünme senin ana süper güçlerin.",
+        traits: ["Mantıklı", "Kararlı", "Sistematik", "Güvenilir"],
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Katherine_Johnson_1983.jpg/640px-Katherine_Johnson_1983.jpg"
+      },
+      franklin: {
+        name: "Rosalind Franklin",
+        field: "DNA Araştırmacısı",
+        description: "Kanıta dayalı çalışmayı seviyorsun. Dikkatli gözlem ve net verilerle bilimsel doğruları ortaya çıkarmaya odaklısın.",
+        traits: ["Kanıt Odaklı", "Dikkatli", "Meraklı", "Titiz"],
+        image: "https://upload.wikimedia.org/wikipedia/en/8/87/Rosalind_Franklin.jpg"
+      },
+      youyou: {
+        name: "Tu Youyou",
+        field: "Tıp Araştırmacısı ve Nobel Ödüllü Bilim İnsanı",
+        description: "Uzun soluklu araştırmalarda sabırla ilerleyip insanlara fayda sağlayan sonuçlar üretmek senin doğanda var.",
+        traits: ["Özverili", "Bilimsel", "Sorumlu", "Çözüm Odaklı"],
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Tu_Youyou_5010-2015.jpg/640px-Tu_Youyou_5010-2015.jpg"
+      }
+    };
+
+    // 5 soruluk test içeriği
+    const quizData = [
+      {
+        question: "Okulda bir proje haftası başladı. İlk ne yaparsın?",
+        options: [
+          { text: "Deney tasarlar, sonuçları karşılaştırırım.", scientist: "curie" },
+          { text: "Kodla çalışan bir prototip geliştiririm.", scientist: "lovelace" },
+          { text: "Verileri düzenler, hesaplamaları netleştiririm.", scientist: "johnson" },
+          { text: "Mikroskobik ve biyolojik ipuçlarını incelerim.", scientist: "franklin" },
+          { text: "Sağlıkla ilgili bir soruna çözüm ararım.", scientist: "youyou" }
+        ]
+      },
+      {
+        question: "Problem çözerken en çok hangi yaklaşımı benimsersin?",
+        options: [
+          { text: "Dene-ölç-geliştir döngüsü ile ilerlerim.", scientist: "curie" },
+          { text: "Yeni bir sistem mantığı kurarım.", scientist: "lovelace" },
+          { text: "Önce matematiksel modeli netleştiririm.", scientist: "johnson" },
+          { text: "Kanıtları titizlikle doğrularım.", scientist: "franklin" },
+          { text: "İnsanlara etkisini önceliklendiririm.", scientist: "youyou" }
+        ]
+      },
+      {
+        question: "Seni en çok heyecanlandıran alan hangisi?",
+        options: [
+          { text: "Kimya ve fizik deneyleri", scientist: "curie" },
+          { text: "Yazılım, algoritma ve yapay zeka", scientist: "lovelace" },
+          { text: "Matematik ve uzay hesapları", scientist: "johnson" },
+          { text: "Genetik ve moleküler biyoloji", scientist: "franklin" },
+          { text: "Tıp ve toplum sağlığı", scientist: "youyou" }
+        ]
+      },
+      {
+        question: "Takım çalışmasında genelde hangi rolü üstlenirsin?",
+        options: [
+          { text: "Deney planını yöneten kişi olurum.", scientist: "curie" },
+          { text: "Sistemi tasarlayan kişi olurum.", scientist: "lovelace" },
+          { text: "Hesap ve zaman takibini yaparım.", scientist: "johnson" },
+          { text: "Veri doğruluğunu kontrol ederim.", scientist: "franklin" },
+          { text: "Çözümün gerçek hayata etkisini değerlendiririm.", scientist: "youyou" }
+        ]
+      },
+      {
+        question: "Bilimde iz bırakma hedefin hangisine daha yakın?",
+        options: [
+          { text: "Yeni bir keşif yapmak istiyorum.", scientist: "curie" },
+          { text: "Geleceğin teknolojilerini üretmek istiyorum.", scientist: "lovelace" },
+          { text: "Uzay ve matematikte sınırları zorlamak istiyorum.", scientist: "johnson" },
+          { text: "Yaşamın temel yapılarını daha iyi anlamak istiyorum.", scientist: "franklin" },
+          { text: "Hastalıklarla mücadelede fark yaratmak istiyorum.", scientist: "youyou" }
+        ]
+      }
+    ];
+
+    // Bilgi kartları
+    const factCards = [
+      {
+        icon: "fa-chart-line",
+        stat: "%33",
+        title: "Araştırmacı Oranı",
+        text: "Dünya genelinde araştırmacıların yaklaşık üçte biri kadınlardan oluşuyor."
+      },
+      {
+        icon: "fa-laptop-code",
+        stat: "1843",
+        title: "Ada Lovelace",
+        text: "Modern bilgisayar programlama fikrinin temelini atan algoritma notlarını yayımladı."
+      },
+      {
+        icon: "fa-satellite",
+        stat: "NASA",
+        title: "Katherine Johnson",
+        text: "Yörünge ve uçuş hesaplarıyla uzay görevlerinde kritik bir rol üstlendi."
+      },
+      {
+        icon: "fa-dna",
+        stat: "DNA",
+        title: "Rosalind Franklin",
+        text: "X-ışını görüntüleme çalışmaları DNA yapısının anlaşılmasına büyük katkı sağladı."
+      }
+    ];
+
+    // Ekstra bölüm: günlük mini görevler
+    const missions = [
+      {
+        level: "Kolay",
+        title: "Bilim Kadını Araştır",
+        description: "Bugün seçtiğin bir bilim kadını hakkında 3 ilginç bilgi bul."
+      },
+      {
+        level: "Orta",
+        title: "Mini Deney Tasarla",
+        description: "Evde güvenli şekilde yapılabilecek kısa bir deney fikri yaz."
+      },
+      {
+        level: "Zor",
+        title: "Gelecek Problemi Seç",
+        description: "İklim, sağlık veya uzay konusunda çözmek istediğin bir problemi not et."
+      }
+    ];
+
+    const questionText = document.getElementById("questionText");
+    const optionsContainer = document.getElementById("optionsContainer");
+    const nextBtn = document.getElementById("nextBtn");
+    const questionCounter = document.getElementById("questionCounter");
+    const progressPercent = document.getElementById("progressPercent");
+    const progressBar = document.getElementById("progressBar");
+    const selectionHint = document.getElementById("selectionHint");
+
+    const resultPlaceholder = document.getElementById("resultPlaceholder");
+    const resultContent = document.getElementById("resultContent");
+    const resultImage = document.getElementById("resultImage");
+    const resultName = document.getElementById("resultName");
+    const resultField = document.getElementById("resultField");
+    const resultDescription = document.getElementById("resultDescription");
+    const resultTraits = document.getElementById("resultTraits");
+
+    const scientistStrip = document.getElementById("scientistStrip");
+
+    let currentQuestion = 0;
+    let selectedScientist = null;
+    const pickedAnswers = [];
+    const scores = {
+      curie: 0,
+      lovelace: 0,
+      johnson: 0,
+      franklin: 0,
+      youyou: 0
+    };
+
+    // Resim yüklenemezse isimden otomatik SVG avatar üretmek için yardımcı fonksiyon
+    function getInitials(name) {
+      return name
+        .split(" ")
+        .map((part) => part[0])
+        .join("")
+        .slice(0, 2)
+        .toUpperCase();
+    }
+
+    function fallbackAvatar(name) {
+      const initials = getInitials(name);
+      const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='640' height='480'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='%23f2ebe7'/><stop offset='100%' stop-color='%23d8c7bd'/></linearGradient></defs><rect fill='url(%23g)' width='100%' height='100%'/><circle cx='320' cy='188' r='82' fill='%2322495a' opacity='0.15'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' fill='%2322495a' font-size='120' font-family='Outfit, sans-serif' font-weight='700'>${initials}</text></svg>`;
+      return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+    }
+
+    function safeImageSource(imgElement, src, name) {
+      imgElement.onerror = () => {
+        imgElement.src = fallbackAvatar(name);
+      };
+      imgElement.src = src;
+    }
+
+    function renderScientistStrip() {
+      scientistStrip.innerHTML = "";
+
+      Object.values(scientists).forEach((scientist) => {
+        const card = document.createElement("article");
+        card.className = "mini-scientist";
+
+        const photo = document.createElement("img");
+        photo.alt = `${scientist.name} portresi`;
+        photo.loading = "lazy";
+        safeImageSource(photo, scientist.image, scientist.name);
+
+        const textWrap = document.createElement("div");
+        textWrap.innerHTML = `<strong>${scientist.name}</strong><span>${scientist.field}</span>`;
+
+        card.appendChild(photo);
+        card.appendChild(textWrap);
+        scientistStrip.appendChild(card);
+      });
+    }
+
+    function renderQuestion() {
+      const currentData = quizData[currentQuestion];
+      const total = quizData.length;
+      const progress = Math.round(((currentQuestion + 1) / total) * 100);
+
+      selectedScientist = null;
+      nextBtn.disabled = true;
+      nextBtn.textContent = currentQuestion === total - 1 ? "Sonucu Gör" : "Sonraki Soru";
+      selectionHint.textContent = "Devam etmek için bir seçenek seç.";
+
+      questionCounter.textContent = `Soru ${currentQuestion + 1} / ${total}`;
+      progressPercent.textContent = `%${progress}`;
+      progressBar.style.width = `${progress}%`;
+      questionText.textContent = currentData.question;
+      optionsContainer.innerHTML = "";
+
+      currentData.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "option-btn";
+        button.innerHTML = `
+          <span class="option-index">${index + 1}</span>
+          <span>${option.text}</span>
+        `;
+
+        button.addEventListener("click", () => {
+          document.querySelectorAll(".option-btn").forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+          selectedScientist = option.scientist;
+          nextBtn.disabled = false;
+          selectionHint.textContent = "Harika! Hazırsan bir sonraki soruya geç.";
+        });
+
+        optionsContainer.appendChild(button);
+      });
+    }
+
+    function chooseWinner() {
+      const maxScore = Math.max(...Object.values(scores));
+      const tied = Object.keys(scores).filter((key) => scores[key] === maxScore);
+
+      if (tied.length === 1) {
+        return tied[0];
+      }
+
+      for (let i = pickedAnswers.length - 1; i >= 0; i -= 1) {
+        if (tied.includes(pickedAnswers[i])) {
+          return pickedAnswers[i];
+        }
+      }
+
+      return tied[0];
+    }
+
+    function showResult() {
+      const winnerKey = chooseWinner();
+      const winner = scientists[winnerKey];
+
+      resultPlaceholder.classList.add("hidden");
+      resultContent.classList.remove("hidden");
+      nextBtn.disabled = true;
+      selectionHint.textContent = "Test tamamlandı. Sonucunu inceleyebilir veya testi yeniden çözebilirsin.";
+
+      safeImageSource(resultImage, winner.image, winner.name);
+      resultName.textContent = winner.name;
+      resultField.textContent = winner.field;
+      resultDescription.textContent = winner.description;
+      resultTraits.innerHTML = winner.traits.map((trait) => `<span class="tag">${trait}</span>`).join("");
+
+      document.getElementById("resultCard").scrollIntoView({ behavior: "smooth", block: "nearest" });
+      localStorage.setItem("badge_quiz_done", "1");
+      checkBadges();
+    }
+
+    document.getElementById("shareBtn").addEventListener("click", () => {
+      const canvas = document.getElementById("shareCanvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = 600;
+      canvas.height = 400;
+      // Gradient background
+      const grad = ctx.createLinearGradient(0, 0, 600, 400);
+      grad.addColorStop(0, "#22495a");
+      grad.addColorStop(1, "#1a3642");
+      ctx.fillStyle = grad;
+      ctx.roundRect(0, 0, 600, 400, 20);
+      ctx.fill();
+      // Accent circle
+      ctx.beginPath();
+      ctx.arc(500, 80, 120, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(216,199,189,0.12)";
+      ctx.fill();
+      // Texts
+      ctx.fillStyle = "#d8c7bd";
+      ctx.font = "bold 13px Outfit, sans-serif";
+      ctx.fillText("BİLİMDE KIZ VE KADIN | 11 ŞUBAT", 36, 42);
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "bold 28px Forum, serif";
+      ctx.fillText("Benim Bilim Eşleşmem:", 36, 90);
+      const winKey = chooseWinner();
+      const win = scientists[winKey];
+      ctx.font = "bold 38px Caudex, serif";
+      ctx.fillStyle = "#22d3ee";
+      ctx.fillText(win.name, 36, 145);
+      ctx.fillStyle = "#d8c7bd";
+      ctx.font = "600 16px Outfit, sans-serif";
+      ctx.fillText(win.field, 36, 175);
+      // Description
+      ctx.fillStyle = "#e2e8f0";
+      ctx.font = "400 14px Outfit, sans-serif";
+      const words = win.description.split(" ");
+      let line = "";
+      let y = 210;
+      words.forEach((word) => {
+        const test = line + word + " ";
+        if (ctx.measureText(test).width > 530) {
+          ctx.fillText(line, 36, y);
+          line = word + " ";
+          y += 22;
+        } else {
+          line = test;
+        }
+      });
+      ctx.fillText(line, 36, y);
+      // Traits
+      ctx.fillStyle = "rgba(216,199,189,0.3)";
+      let tx = 36;
+      const ty = 330;
+      win.traits.forEach((trait) => {
+        const w = ctx.measureText(trait).width + 20;
+        ctx.beginPath();
+        ctx.roundRect(tx, ty - 14, w, 26, 12);
+        ctx.fill();
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "bold 12px Outfit, sans-serif";
+        ctx.fillText(trait, tx + 10, ty + 4);
+        ctx.fillStyle = "rgba(216,199,189,0.3)";
+        tx += w + 8;
+      });
+      // Footer
+      ctx.fillStyle = "rgba(255,255,255,0.4)";
+      ctx.font = "11px Outfit, sans-serif";
+      ctx.fillText("bilimde-kiz-ve-kadin.app • Sen de keşfet!", 36, 380);
+      // Download
+      const link = document.createElement("a");
+      link.download = `bilim-eslesmem-${win.name.replace(/\s/g, "-").toLowerCase()}.png`;
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    });
+
+    document.getElementById("reviewBtn").addEventListener("click", () => {
+      const panel = document.getElementById("reviewPanel");
+      const list = document.getElementById("reviewList");
+      if (!panel.classList.contains("hidden")) {
+        panel.classList.add("hidden");
+        return;
+      }
+      list.innerHTML = "";
+      pickedAnswers.forEach((key, i) => {
+        const q = quizData[i];
+        const chosen = q.options.find((o) => o.scientist === key);
+        const sci = scientists[key];
+        const item = document.createElement("div");
+        item.style.cssText = "background:var(--lbeige);border:1px solid var(--beige);border-radius:0.7rem;padding:0.6rem;";
+        item.innerHTML = `
+          <p class="m-0 text-xs font-bold text-slate-500">Soru ${i + 1}: ${q.question}</p>
+          <p class="m-0 text-sm font-semibold mt-1" style="color:var(--teal);">${chosen.text}</p>
+          <p class="m-0 text-xs text-slate-500 mt-0.5"><i class="fa-solid fa-arrow-right text-[0.6rem]"></i> ${sci.name} ile eşleşti</p>
+        `;
+        list.appendChild(item);
+      });
+      panel.classList.remove("hidden");
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (!selectedScientist) {
+        return;
+      }
+
+      scores[selectedScientist] += 1;
+      pickedAnswers.push(selectedScientist);
+
+      if (currentQuestion < quizData.length - 1) {
+        currentQuestion += 1;
+        renderQuestion();
+      } else {
+        showResult();
+      }
+    });
+
+    document.getElementById("restartBtn").addEventListener("click", () => {
+      currentQuestion = 0;
+      selectedScientist = null;
+      pickedAnswers.length = 0;
+      Object.keys(scores).forEach((key) => {
+        scores[key] = 0;
+      });
+
+      resultContent.classList.add("hidden");
+      resultPlaceholder.classList.remove("hidden");
+      document.getElementById("reviewPanel").classList.add("hidden");
+      renderQuestion();
+      document.getElementById("test").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    // Üst menü ve hero butonları için tek bir yumuşak kaydırma davranışı
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    document.getElementById("startBtn").addEventListener("click", () => scrollToSection("test"));
+    document.querySelectorAll("[data-scroll]").forEach((button) => {
+      button.addEventListener("click", () => scrollToSection(button.dataset.scroll));
+    });
+
+    // Fade-in görünüm animasyonu
+    const revealElements = document.querySelectorAll(".reveal");
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    revealElements.forEach((element) => revealObserver.observe(element));
+
+    // Fact slider
+    const factViewport = document.getElementById("factViewport");
+    const factTrack = document.getElementById("factTrack");
+    const factDots = document.getElementById("factDots");
+
+    let factIndex = 0;
+    let cardsPerView = 1;
+    let autoSlideTimer = null;
+
+    function maxFactIndex() {
+      return Math.max(0, factCards.length - cardsPerView);
+    }
+
+    function renderFactCards() {
+      factTrack.innerHTML = "";
+
+      factCards.forEach((card) => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "fact-card";
+        wrapper.innerHTML = `
+          <article class="fact-inner">
+            <div class="flex items-center justify-between">
+              <div class="fact-icon"><i class="fa-solid ${card.icon}"></i></div>
+              <button type="button" class="speak-btn btn-secondary" data-speak="${card.title}. ${card.text}" style="padding:0.3rem 0.55rem;font-size:0.7rem;border-radius:999px;">
+                <i class="fa-solid fa-volume-high"></i>
+              </button>
+            </div>
+            <p class="fact-stat">${card.stat}</p>
+            <h3 class="fact-title">${card.title}</h3>
+            <p class="fact-text">${card.text}</p>
+          </article>
+        `;
+        factTrack.appendChild(wrapper);
+      });
+    }
+
+    function slideFacts() {
+      const cardWidth = factViewport.clientWidth / cardsPerView;
+      factTrack.style.transform = `translateX(-${factIndex * cardWidth}px)`;
+
+      Array.from(factDots.children).forEach((dot, index) => {
+        if (index === factIndex) {
+          dot.classList.add("active");
+        } else {
+          dot.classList.remove("active");
+        }
+      });
+    }
+
+    function renderFactDots() {
+      const dotCount = maxFactIndex() + 1;
+      factDots.innerHTML = "";
+
+      for (let i = 0; i < dotCount; i += 1) {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "fact-dot";
+        dot.setAttribute("aria-label", `${i + 1}. bilgi seti`);
+        dot.addEventListener("click", () => {
+          factIndex = i;
+          slideFacts();
+        });
+        factDots.appendChild(dot);
+      }
+
+      slideFacts();
+    }
+
+    function updateFactLayout() {
+      cardsPerView = window.innerWidth >= 1024 ? 2 : 1;
+
+      const cardWidth = factViewport.clientWidth / cardsPerView;
+      Array.from(factTrack.children).forEach((card) => {
+        card.style.width = `${cardWidth}px`;
+      });
+
+      if (factIndex > maxFactIndex()) {
+        factIndex = maxFactIndex();
+      }
+
+      renderFactDots();
+    }
+
+    function nextFact() {
+      const maxIndex = maxFactIndex();
+      factIndex = factIndex >= maxIndex ? 0 : factIndex + 1;
+      slideFacts();
+    }
+
+    function prevFact() {
+      const maxIndex = maxFactIndex();
+      factIndex = factIndex <= 0 ? maxIndex : factIndex - 1;
+      slideFacts();
+    }
+
+    function stopAutoSlide() {
+      if (autoSlideTimer) {
+        clearInterval(autoSlideTimer);
+      }
+    }
+
+    function startAutoSlide() {
+      stopAutoSlide();
+      autoSlideTimer = setInterval(nextFact, 5200);
+    }
+
+    document.getElementById("nextFact").addEventListener("click", () => {
+      nextFact();
+      startAutoSlide();
+    });
+
+    document.getElementById("prevFact").addEventListener("click", () => {
+      prevFact();
+      startAutoSlide();
+    });
+
+    factViewport.addEventListener("mouseenter", stopAutoSlide);
+    factViewport.addEventListener("mouseleave", startAutoSlide);
+    window.addEventListener("resize", updateFactLayout);
+
+    // Missions
+    const missionGrid = document.getElementById("missionGrid");
+    const missionCount = document.getElementById("missionCount");
+    const missionStatus = document.getElementById("missionStatus");
+    let completedMissionCount = 0;
+
+    function updateMissionSummary() {
+      missionCount.textContent = `${completedMissionCount}/${missions.length}`;
+
+      if (completedMissionCount === missions.length) {
+        missionStatus.textContent = "Mükemmel! Tüm görevler tamamlandı";
+        missionStatus.className = "mission-status done";
+        localStorage.setItem("badge_all_missions", "1");
+        checkBadges();
+      } else if (completedMissionCount > 0) {
+        missionStatus.textContent = "Harika gidiyorsun";
+        missionStatus.className = "mission-status progress";
+      } else {
+        missionStatus.textContent = "Hadi başlayalım";
+        missionStatus.className = "mission-status";
+      }
+    }
+
+    function renderMissions() {
+      missionGrid.innerHTML = "";
+
+      missions.forEach((mission) => {
+        const article = document.createElement("article");
+        article.className = "mission-card";
+
+        article.innerHTML = `
+          <span class="mission-badge"><i class="fa-solid fa-atom"></i>${mission.level}</span>
+          <h3 class="mission-title">${mission.title}</h3>
+          <p class="mission-desc">${mission.description}</p>
+          <button type="button" class="mission-btn">Tamamladım</button>
+        `;
+
+        const button = article.querySelector(".mission-btn");
+        button.addEventListener("click", () => {
+          const done = article.classList.toggle("done");
+          if (done) {
+            completedMissionCount += 1;
+            button.textContent = "Tamamlandı ✓";
+          } else {
+            completedMissionCount -= 1;
+            button.textContent = "Tamamladım";
+          }
+          updateMissionSummary();
+        });
+
+        missionGrid.appendChild(article);
+      });
+
+      updateMissionSummary();
+    }
+
+    // Zaman çizelgesi
+    const timelineData = [
+      { year: "1843", name: "Ada Lovelace", event: "İlk bilgisayar algoritmasını yayımladı", detail: "Charles Babbage'ın Analitik Motoru için yazdığı notlarda, makinenin sayılardan fazlasını işleyebileceğini öngördü." },
+      { year: "1898", name: "Marie Curie", event: "Polonyum ve radyumu keşfetti", detail: "Radyoaktivite üzerine çığır açan çalışmalarıyla iki farklı alanda Nobel Ödülü kazanan ilk insan oldu." },
+      { year: "1952", name: "Rosalind Franklin", event: "DNA'nın X-ışını fotoğrafını çekti", detail: "Ünlü Fotoğraf 51, DNA'nın çift sarmal yapısının anlaşılmasında kritik bir kanıt sağladı." },
+      { year: "1953", name: "Chien-Shiung Wu", event: "Parite korunumu ilkesini çürüttü", detail: "Fizikteki en temel varsayımlardan birini deneysel olarak çürüterek kuantum fiziğinde devrim yarattı." },
+      { year: "1962", name: "Rachel Carson", event: "Sessiz Bahar kitabını yayımladı", detail: "Pestisitlerin çevreye etkisini anlatan kitabıyla modern çevre hareketinin başlamasına öncülük etti." },
+      { year: "1969", name: "Katherine Johnson", event: "Apollo 11 yörünge hesaplamalarını yaptı", detail: "Ay'a ilk inişin güvenli gerçekleşmesini sağlayan kritik hesaplamaları elle yaptı." },
+      { year: "1972", name: "Tu Youyou", event: "Artemisinin'i keşfetti", detail: "Geleneksel Çin tıbbından ilham alarak sıtma tedavisinde çığır açan bir ilaç geliştirdi." },
+      { year: "2014", name: "Maryam Mirzakhani", event: "Fields Madalyası alan ilk kadın oldu", detail: "Riemann yüzeylerinin geometrisi üzerine yaptığı çalışmalarla matematiğin en prestijli ödülünü kazandı." }
+    ];
+
+    function renderTimeline() {
+      const container = document.getElementById("timelineContainer");
+      timelineData.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = "timeline-item";
+        div.innerHTML = `
+          <div class="timeline-dot"></div>
+          <span class="timeline-year">${item.year}</span>
+          <div class="timeline-body">
+            <p class="m-0 font-bold text-sm" style="color:var(--ink);">${item.name} — ${item.event}</p>
+            <div class="timeline-detail">
+              <p class="m-0 text-sm text-slate-500 mt-2">${item.detail}</p>
+            </div>
+          </div>
+        `;
+        div.addEventListener("click", () => div.classList.toggle("open"));
+        container.appendChild(div);
+      });
+    }
+
+    // Senaryo (what-if) kartları
+    const whatifData = [
+      { question: "Marie Curie radyoaktiviteyi keşfetmeseydi?", answer: "Kanser tedavisinde kullanılan radyoterapi gelişemez, tıbbi görüntüleme teknolojileri çok daha geç ortaya çıkardı." },
+      { question: "Ada Lovelace algoritma fikrini yazmasaydı?", answer: "Programlama kavramının temelleri gecikirdi. Bilgisayarların sadece hesap makinesi olarak kalma ihtimali vardı." },
+      { question: "Katherine Johnson hesaplamalarını yapmasaydı?", answer: "Apollo 11 başarısız olabilirdi. Uzay yarışının seyri ve GPS gibi teknolojiler farklı gelişirdi." },
+      { question: "Rosalind Franklin DNA fotoğrafını çekmeseydi?", answer: "DNA'nın çift sarmal yapısı çok daha geç anlaşılırdı. Genetik mühendisliği ve modern tıp gecikebilirdi." },
+      { question: "Tu Youyou artemisini keşfetmeseydi?", answer: "Her yıl milyonlarca insan sıtmadan ölmeye devam ederdi. Özellikle Afrika'da yıkıcı sonuçlar olurdu." }
+    ];
+
+    function renderWhatIf() {
+      const grid = document.getElementById("whatifGrid");
+      whatifData.forEach((item) => {
+        const card = document.createElement("div");
+        card.className = "whatif-card";
+        card.innerHTML = `
+          <div class="whatif-inner">
+            <div class="whatif-front">
+              <p class="text-xs font-bold text-[var(--teal)] mb-1"><i class="fa-solid fa-question-circle"></i> YA OLMASAYDI?</p>
+              <p class="m-0 font-bold" style="color:var(--ink);font-size:0.95rem;">${item.question}</p>
+              <p class="text-xs text-slate-400 mt-2">Kartı çevirmek için tıkla</p>
+            </div>
+            <div class="whatif-back">
+              <p class="text-xs font-bold mb-1" style="color:#16a34a;"><i class="fa-solid fa-lightbulb"></i> GERÇEK ETKİSİ</p>
+              <p class="m-0 text-sm" style="color:var(--ink);">${item.answer}</p>
+            </div>
+          </div>
+        `;
+        card.addEventListener("click", () => card.classList.toggle("flipped"));
+        grid.appendChild(card);
+      });
+    }
+
+    // Bilim günlüğü
+    function getJournalEntries() {
+      try { return JSON.parse(localStorage.getItem("scienceJournal") || "[]"); } catch { return []; }
+    }
+    function saveJournalEntries(entries) { localStorage.setItem("scienceJournal", JSON.stringify(entries)); }
+
+    function renderJournal() {
+      const entries = getJournalEntries();
+      const container = document.getElementById("journalEntries");
+      const empty = document.getElementById("journalEmpty");
+      container.innerHTML = "";
+      if (entries.length === 0) { empty.classList.remove("hidden"); return; }
+      empty.classList.add("hidden");
+      entries.slice().reverse().forEach((entry, revIdx) => {
+        const idx = entries.length - 1 - revIdx;
+        const div = document.createElement("div");
+        div.className = "journal-entry";
+        div.innerHTML = `
+          <i class="fa-solid fa-feather-pointed text-xs" style="color:var(--teal);"></i>
+          <span>${entry.text}</span>
+          <span class="journal-date">${entry.date}</span>
+          <button class="journal-del" data-idx="${idx}"><i class="fa-solid fa-xmark"></i></button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    document.getElementById("journalAdd").addEventListener("click", () => {
+      const input = document.getElementById("journalInput");
+      const text = input.value.trim();
+      if (!text) return;
+      const entries = getJournalEntries();
+      const today = new Date().toLocaleDateString("tr-TR", { day: "numeric", month: "short" });
+      entries.push({ text, date: today });
+      saveJournalEntries(entries);
+      input.value = "";
+      renderJournal();
+      checkBadges();
+    });
+
+    document.getElementById("journalInput").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") document.getElementById("journalAdd").click();
+    });
+
+    document.getElementById("journalEntries").addEventListener("click", (e) => {
+      const btn = e.target.closest(".journal-del");
+      if (!btn) return;
+      const entries = getJournalEntries();
+      entries.splice(parseInt(btn.dataset.idx), 1);
+      saveJournalEntries(entries);
+      renderJournal();
+    });
+
+    // Başarı rozeti sistemi
+    const badgeDefinitions = [
+      { id: "quiz_done", icon: "fa-solid fa-star", title: "Keşifçi", desc: "İlk testi tamamla", check: () => localStorage.getItem("badge_quiz_done") === "1" },
+      { id: "all_missions", icon: "fa-solid fa-list-check", title: "Bilim Elçisi", desc: "Tüm görevleri bitir", check: () => localStorage.getItem("badge_all_missions") === "1" },
+      { id: "match_master", icon: "fa-solid fa-puzzle-piece", title: "Eşleştirme Ustası", desc: "Eşleştirme oyununu tamamla", check: () => localStorage.getItem("badge_match_master") === "1" },
+      { id: "journal_1", icon: "fa-solid fa-feather-pointed", title: "İlk Not", desc: "Günlüğe ilk kaydını ekle", check: () => getJournalEntries().length >= 1 },
+      { id: "journal_5", icon: "fa-solid fa-book", title: "Düzenli Yazar", desc: "5 günlük kaydı ekle", check: () => getJournalEntries().length >= 5 },
+      { id: "experiment", icon: "fa-solid fa-flask", title: "Genç Bilim İnsanı", desc: "Bir deney tasarla", check: () => localStorage.getItem("badge_experiment") === "1" },
+      { id: "explorer", icon: "fa-solid fa-compass", title: "Gezgin", desc: "Tüm bölümleri keşfet", check: () => localStorage.getItem("badge_explorer") === "1" },
+      { id: "dark_mode", icon: "fa-solid fa-moon", title: "Gece Kuşu", desc: "Dark mode'u etkinleştir", check: () => localStorage.getItem("badge_dark_mode") === "1" }
+    ];
+
+    function checkBadges() {
+      const grid = document.getElementById("badgeGrid");
+      grid.innerHTML = "";
+      badgeDefinitions.forEach((badge) => {
+        const earned = badge.check();
+        const el = document.createElement("div");
+        el.className = `badge-card ${earned ? "earned" : ""}`;
+        el.innerHTML = `
+          <div class="badge-icon">${earned ? `<i class="${badge.icon}" style="color:var(--teal);"></i>` : '<i class="fa-solid fa-lock" style="color:var(--g300);"></i>'}</div>
+          <p class="m-0 text-sm font-bold" style="color:${earned ? "var(--teal)" : "var(--g500)"};">${badge.title}</p>
+          <p class="m-0 text-xs text-slate-400 mt-0.5">${badge.desc}</p>
+        `;
+        grid.appendChild(el);
+      });
+    }
+
+    // Badge triggers - hook into existing functions
+    const origShowResult = showResult;
+
+    // Deney tasarla
+    let expStep = 1;
+    const expTotalSteps = 5;
+
+    function updateExpUI() {
+      document.querySelectorAll(".exp-step").forEach((el) => {
+        el.classList.toggle("hidden", parseInt(el.dataset.step) !== expStep);
+      });
+      document.querySelectorAll(".exp-dot").forEach((d) => {
+        d.classList.toggle("active", parseInt(d.dataset.dot) === expStep);
+      });
+      document.getElementById("expPrev").disabled = expStep === 1;
+      const nextBtn2 = document.getElementById("expNext");
+      nextBtn2.innerHTML = expStep === expTotalSteps ? 'Tamamla <i class="fa-solid fa-check"></i>' : 'İleri <i class="fa-solid fa-arrow-right"></i>';
+    }
+
+    document.getElementById("expNext").addEventListener("click", () => {
+      if (expStep < expTotalSteps) {
+        expStep++;
+        updateExpUI();
+      } else {
+        // Show summary
+        const labels = ["Araştırma Sorusu", "Hipotez", "Malzemeler", "Deney Adımları", "Beklenen Sonuç"];
+        const ids = ["expQ", "expH", "expM", "expS", "expR"];
+        const content = document.getElementById("expSummaryContent");
+        content.innerHTML = "";
+        ids.forEach((id, i) => {
+          const val = document.getElementById(id).value.trim() || "(Boş bırakıldı)";
+          content.innerHTML += `<div><strong style="color:var(--teal);">${labels[i]}:</strong> ${val}</div>`;
+        });
+        document.getElementById("expSummary").classList.remove("hidden");
+        localStorage.setItem("badge_experiment", "1");
+        checkBadges();
+        document.getElementById("expSteps").classList.add("hidden");
+        document.querySelectorAll(".exp-dot").forEach((d) => d.style.display = "none");
+        document.getElementById("expPrev").classList.add("hidden");
+        document.getElementById("expNext").classList.add("hidden");
+      }
+    });
+
+    document.getElementById("expPrev").addEventListener("click", () => {
+      if (expStep > 1) { expStep--; updateExpUI(); }
+    });
+
+    document.getElementById("expReset").addEventListener("click", () => {
+      expStep = 1;
+      ["expQ", "expH", "expM", "expS", "expR"].forEach((id) => { document.getElementById(id).value = ""; });
+      document.getElementById("expSummary").classList.add("hidden");
+      document.getElementById("expSteps").classList.remove("hidden");
+      document.querySelectorAll(".exp-dot").forEach((d) => d.style.display = "");
+      document.getElementById("expPrev").classList.remove("hidden");
+      document.getElementById("expNext").classList.remove("hidden");
+      updateExpUI();
+    });
+
+    // Bilim sözlüğü
+    const glossaryData = [
+      { term: "Radyoaktivite", def: "Atom çekirdeklerinin kendiliğinden parçacık veya enerji yayarak dönüşmesi olayı." },
+      { term: "Algoritma", def: "Bir problemi çözmek için izlenen adım adım talimatlar dizisi." },
+      { term: "Yörünge", def: "Bir gök cisminin veya uzay aracının yerçekimi etkisiyle izlediği yol." },
+      { term: "DNA", def: "Canlıların genetik bilgisini taşıyan çift sarmal yapılı molekül (Deoksiribonükleik Asit)." },
+      { term: "Hipotez", def: "Bir bilimsel araştırmanın başlangıcında öne sürülen, test edilebilir tahmin veya önerme." },
+      { term: "Moleküler Biyoloji", def: "Canlılardaki moleküllerin yapısını ve işlevini inceleyen bilim dalı." },
+      { term: "Artemisinin", def: "Tu Youyou tarafından keşfedilen, sıtma tedavisinde kullanılan bitkisel kökenli ilaç bileşiği." },
+      { term: "X-Işını Kristalografisi", def: "Kristal yapıdaki maddelerin atomik düzenini anlamak için X-ışınlarının kullanıldığı teknik." },
+      { term: "Parite Korunumu", def: "Fizikteki simetri ilkelerinden biri; ayna görüntüsü deneylerin aynı sonucu vermesi gerektiği varsayımı." },
+      { term: "Radyoterapi", def: "Kanser hücrelerini yok etmek için yüksek enerjili radyasyon kullanılan tedavi yöntemi." },
+      { term: "Riemann Yüzeyi", def: "Karmaşık analizde çok değerli fonksiyonları tek değerli hale getirmek için kullanılan matematiksel yapı." },
+      { term: "Nobel Ödülü", def: "Alfred Nobel'in vasiyetiyle kurulan, bilim, edebiyat ve barış alanlarında verilen uluslararası prestijli ödül." }
+    ];
+
+    function renderGlossary() {
+      const grid = document.getElementById("glossaryGrid");
+      glossaryData.forEach((item) => {
+        const el = document.createElement("div");
+        el.className = "glossary-item";
+        el.innerHTML = `
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-book-open text-xs" style="color:var(--teal);"></i>
+            <span class="font-bold text-sm" style="color:var(--teal);">${item.term}</span>
+          </div>
+          <div class="glossary-def">
+            <p class="m-0 text-sm text-slate-500">${item.def}</p>
+          </div>
+        `;
+        el.addEventListener("click", () => el.classList.toggle("open"));
+        grid.appendChild(el);
+      });
+    }
+
+    // Eşleştirme oyunu
+    const matchData = [
+      { name: "Marie Curie", discovery: "Radyoaktivite ve Polonyum keşfi" },
+      { name: "Ada Lovelace", discovery: "İlk bilgisayar programı algoritması" },
+      { name: "Katherine Johnson", discovery: "NASA yörünge hesaplamaları" },
+      { name: "Rosalind Franklin", discovery: "DNA yapısının X-ışını görüntülemesi" },
+      { name: "Tu Youyou", discovery: "Sıtma tedavisi (Artemisinin)" }
+    ];
+
+    let matchSelected = null;
+    let matchCorrect = 0;
+
+    function shuffleArray(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function renderMatchGame() {
+      const namesDiv = document.getElementById("matchNames");
+      const discDiv = document.getElementById("matchDiscoveries");
+      const feedback = document.getElementById("matchFeedback");
+      namesDiv.innerHTML = "";
+      discDiv.innerHTML = "";
+      feedback.textContent = "";
+      matchSelected = null;
+      matchCorrect = 0;
+      document.getElementById("matchScore").textContent = "0/5";
+
+      const shuffledNames = shuffleArray(matchData);
+      const shuffledDisc = shuffleArray(matchData);
+
+      shuffledNames.forEach((item) => {
+        const el = document.createElement("div");
+        el.className = "match-item";
+        el.textContent = item.name;
+        el.dataset.key = item.name;
+        el.dataset.side = "name";
+        el.addEventListener("click", () => handleMatchClick(el));
+        namesDiv.appendChild(el);
+      });
+
+      shuffledDisc.forEach((item) => {
+        const el = document.createElement("div");
+        el.className = "match-item";
+        el.textContent = item.discovery;
+        el.dataset.key = item.name;
+        el.dataset.side = "discovery";
+        el.addEventListener("click", () => handleMatchClick(el));
+        discDiv.appendChild(el);
+      });
+    }
+
+    function handleMatchClick(el) {
+      if (el.classList.contains("correct")) return;
+      const feedback = document.getElementById("matchFeedback");
+
+      if (!matchSelected) {
+        document.querySelectorAll(".match-item").forEach((m) => m.classList.remove("selected", "wrong"));
+        el.classList.add("selected");
+        matchSelected = el;
+        return;
+      }
+
+      if (matchSelected.dataset.side === el.dataset.side) {
+        matchSelected.classList.remove("selected");
+        el.classList.add("selected");
+        matchSelected = el;
+        return;
+      }
+
+      if (matchSelected.dataset.key === el.dataset.key) {
+        matchSelected.classList.remove("selected");
+        matchSelected.classList.add("correct");
+        el.classList.add("correct");
+        matchCorrect++;
+        document.getElementById("matchScore").textContent = `${matchCorrect}/5`;
+        feedback.textContent = matchCorrect === 5 ? "Harika! Tüm eşleştirmeleri doğru yaptın!" : "Doğru eşleştirme!";
+        if (matchCorrect === 5) { localStorage.setItem("badge_match_master", "1"); checkBadges(); }
+        feedback.style.color = "#16a34a";
+        matchSelected = null;
+      } else {
+        el.classList.add("wrong");
+        matchSelected.classList.add("wrong");
+        feedback.textContent = "Yanlış eşleştirme, tekrar dene!";
+        feedback.style.color = "#dc2626";
+        setTimeout(() => {
+          el.classList.remove("wrong");
+          matchSelected?.classList.remove("wrong", "selected");
+          matchSelected = null;
+        }, 700);
+      }
+    }
+
+    document.getElementById("resetMatch").addEventListener("click", renderMatchGame);
+
+    // Count-up animasyonu
+    function animateCountUp(element, target, suffix = "", prefix = "") {
+      const duration = 1500;
+      const start = performance.now();
+      element.classList.add("counting");
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+        element.textContent = prefix + current + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          element.classList.remove("counting");
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+
+    const factCountObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const statEl = entry.target.querySelector(".fact-stat");
+          if (statEl && !statEl.dataset.animated) {
+            statEl.dataset.animated = "1";
+            const raw = statEl.textContent.trim();
+            const numMatch = raw.match(/\d+/);
+            if (numMatch) {
+              const num = parseInt(numMatch[0], 10);
+              const prefix = raw.startsWith("%") ? "%" : "";
+              const suffix = raw.replace(/[%\d]/g, "");
+              animateCountUp(statEl, num, suffix, prefix);
+            }
+          }
+        }
+      });
+    }, { threshold: 0.3 });
+
+    // İlk yükleme
+    renderScientistStrip();
+    renderQuestion();
+    renderFactCards();
+    document.querySelectorAll(".fact-inner").forEach((el) => factCountObserver.observe(el));
+
+    // Sesli okuma
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest(".speak-btn");
+      if (!btn) return;
+      const text = btn.dataset.speak;
+      if (!text || !window.speechSynthesis) return;
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "tr-TR";
+      utterance.rate = 0.9;
+      btn.innerHTML = '<i class="fa-solid fa-volume-high" style="color:var(--teal);"></i>';
+      utterance.onend = () => { btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>'; };
+      window.speechSynthesis.speak(utterance);
+    });
+    updateFactLayout();
+    startAutoSlide();
+    renderMissions();
+    renderMatchGame();
+    renderTimeline();
+    renderWhatIf();
+    renderGlossary();
+    renderJournal();
+    checkBadges();
+
+    // Gezgin rozeti: tüm bölümleri ziyaret takibi
+    const explorerSections = ["hero", "test", "facts", "matching", "timeline", "whatif", "glossary", "experiment", "missions", "journal", "badges", "famous-experiments", "worldmap"];
+    const visitedSections = new Set(JSON.parse(localStorage.getItem("visitedSections") || "[]"));
+    const explorerObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          visitedSections.add(entry.target.id);
+          localStorage.setItem("visitedSections", JSON.stringify([...visitedSections]));
+          if (explorerSections.every((s) => visitedSections.has(s))) {
+            localStorage.setItem("badge_explorer", "1");
+            checkBadges();
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+    explorerSections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) explorerObserver.observe(el);
+    });
+
+    // Ünlü Deneyler interaktif bölümü
+    const famousExperiments = [
+      {
+        emoji: "☢️", title: "Radyoaktivite Deneyleri", scientist: "Marie Curie", year: "1898 - Paris, Fransa",
+        why: "Maddenin atomdan küçük parçalardan oluştuğunu ve bu parçaların enerji yaydığını gösterdi. Bu keşif fiziğin temel anlayışını kökten değiştirdi ve tıpta kanser tedavisinin (radyoterapi) kapısını açtı.",
+        steps: [
+          { title: "Uranyum tuzlarının radyasyonunu ölç", detail: "Curie, Henri Becquerel'in keşfettiği uranyum ışınlarını sistematik olarak ölçmeye başladı. Elektrometre cihazını kullanarak farklı maddelerin radyasyon seviyelerini karşılaştırdı." },
+          { title: "Toryumun da radyoaktif olduğunu keşfet", detail: "Sadece uranyumun değil, toryumun da benzer ışınlar yaydığını buldu. Bu, radyoaktivitenin tek bir elemente özgü değil, atomun bir özelliği olduğunu gösterdi." },
+          { title: "Pechblende cevherinden yeni elementleri ayır", detail: "Tonlarca pechblende cevherini kimyasal olarak işleyerek, bilinen elementlerden çok daha güçlü radyasyon yayan iki yeni element keşfetti." },
+          { title: "Polonyum ve Radyumu dünyaya tanıt", detail: "Yeni elementleri Polonyum (vatanı Polonya'ya ithafen) ve Radyum olarak adlandırdı. Radyum, uranyumdan 2 milyon kat daha radyoaktifti!" }
+        ],
+        today: "Bugün radyoterapi kanser tedavisinin temel taşıdır. Nükleer enerji, tıbbi görüntüleme (PET tarama) ve endüstriyel uygulamalar bu keşfin mirasıdır.",
+        think: "Eğer Marie Curie radyasyonun tehlikelerini bilseydi araştırmalarına devam eder miydi? Bilim insanları risk almak zorunda mı?"
+      },
+      {
+        emoji: "🧬", title: "Fotoğraf 51 — DNA'nın X-Işını Görüntüsü", scientist: "Rosalind Franklin", year: "1952 - Londra, İngiltere",
+        why: "DNA'nın çift sarmal yapısını ilk kez net olarak gösteren bu fotoğraf, genetik biliminin temelini oluşturdu. Bu yapı anlaşılmadan genetik mühendisliği, DNA testi veya gen tedavisi mümkün olmazdı.",
+        steps: [
+          { title: "DNA liflerini özenle hazırla", detail: "Franklin, DNA moleküllerini kristalize edebilmek için son derece ince lifler hazırladı. Bu lifler saatlerce dikkatli çalışma gerektiriyordu — bir milimetrenin binde biri kalınlığında!" },
+          { title: "X-ışınlarını DNA kristallerine gönder", detail: "X-ışını kristalografi tekniğiyle, görünmez olan DNA molekülüne X-ışınları göndererek kırınım deseni oluşturdu. Bu desen, molekülün 3 boyutlu yapısını kodluyordu." },
+          { title: "100 saat boyunca tek bir fotoğraf pozla", detail: "Ünlü Fotoğraf 51, tam 100 saat boyunca X-ışınına maruz bırakılarak elde edildi. Bu sabır ve teknik ustalık, benzersiz bir netlik sağladı." },
+          { title: "Çift sarmal yapının kanıtını ortaya koy", detail: "Fotoğraftaki 'X' şeklindeki kırınım deseni, DNA'nın sarmal yapıda olduğunun matematiksel kanıtıydı. Bu görüntü Watson ve Crick'in modelini doğruladı." }
+        ],
+        today: "Genetik testler, kişiselleştirilmiş tıp, adli bilim (DNA parmak izi), gen terapisi ve CRISPR teknolojisi — hepsi Franklin'in çalışmasının üzerine inşa edildi.",
+        think: "Franklin, keşfinin tam değerini göremeden hayatını kaybetti. Bilimde 'görünmeyen kahramanlar' neden önemlidir?"
+      },
+      {
+        emoji: "🌿", title: "Artemisinin — Sıtma İlacının Keşfi", scientist: "Tu Youyou", year: "1972 - Pekin, Çin",
+        why: "Sıtma, insanlık tarihinin en çok can alan hastalıklarından biridir. Tu Youyou'nun geleneksel tıptan ilham alarak bulduğu Artemisinin, milyonlarca hayat kurtardı ve bugün hâlâ en etkili sıtma ilacıdır.",
+        steps: [
+          { title: "2000 yıllık Çin tıp metinlerini tara", detail: "Tu Youyou, 640'tan fazla bitkisel formülü içeren kadim Çin tıp metinlerini sistematik olarak inceledi. Amacı, modern bilimin gözden kaçırdığı ipuçlarını bulmaktı." },
+          { title: "Tatlı pelin otuna (Artemisia annua) odaklan", detail: "4. yüzyıldan kalma bir metinde 'tatlı pelin otunun ateşi düşürdüğü' yazıyordu. Bu ipucu, Tu Youyou'nun dikkatini çekti." },
+          { title: "Düşük sıcaklıkta özütleme yöntemini keşfet", detail: "İlk denemeler başarısız oldu çünkü kaynama sıcaklığı etken maddeyi bozuyordu. Eski metinde 'soğuk suda beklet' yazıyordu — bu ipucu çığır açtı! Düşük sıcaklıkta eter kullanarak %100 etkili bir özüt elde etti." },
+          { title: "Önce kendinde test et", detail: "Güvenliğinden emin olmak için ilacı önce kendi üzerinde denedi. Sonra klinik deneylerde sıtma hastalarında %100 başarı elde etti." }
+        ],
+        today: "Dünya Sağlık Örgütü, Artemisinin bazlı tedavileri sıtma için birincil tedavi olarak önerir. Bu ilaç sayesinde her yıl yüz binlerce çocuğun hayatı kurtarılmaktadır.",
+        think: "2000 yıllık bir kitaptaki bilgi modern bilimi nasıl değiştirebilir? Geleneksel bilgi ile modern bilim arasında nasıl köprüler kurabiliriz?"
+      },
+      {
+        emoji: "⚛️", title: "Parite Korunumunun Çürütülmesi", scientist: "Chien-Shiung Wu", year: "1956 - New York, ABD",
+        why: "Fizikçiler 30 yıl boyunca doğanın 'simetrik' olduğuna inanıyordu — yani bir deney ile ayna görüntüsü aynı sonucu vermeliydi. Wu, bu temel varsayımın yanlış olduğunu deneysel olarak kanıtlayarak fiziğin kurallarını yeniden yazdı.",
+        steps: [
+          { title: "Kobalt-60 atomlarını mutlak sıfıra yakın soğut", detail: "Wu, kobalt-60 izotoplarını -273°C'ye yakın soğutarak atomları neredeyse tamamen hareketsiz hale getirdi. Bu, deneyin hassasiyeti için gerekliydi." },
+          { title: "Güçlü manyetik alanla atomları hizala", detail: "Süper soğutulan atomlar, güçlü bir manyetik alanla aynı yöne döndürüldü. Böylece tüm atomlar 'aynı yöne bakıyor' hale getirildi." },
+          { title: "Beta bozunumu sırasında elektron dağılımını ölç", detail: "Atomlar bozunurken (çürürken) yaydıkları elektronların hangi yöne gittiğini hassas detektörlerle ölçtü." },
+          { title: "Simetri kırılmasını kanıtla", detail: "Elektronlar eşit olarak her yöne gitmesi gerekirken, bir yöne daha çok gidiyordu! Bu, doğanın 'sol' ve 'sağ' arasında ayrım yaptığını — yani simetrik olmadığını — kanıtladı." }
+        ],
+        today: "Bu keşif, parçacık fiziğinin Standart Modeli'nin temelini oluşturdu. Madde-antimadde asimetrisi, evrenin neden var olduğunu anlamamıza yardımcı olur.",
+        think: "Herkesin 'kesinlikle doğru' dediği bir şeyin yanlış olduğunu kanıtlamak nasıl bir cesaret gerektirir? Bilimde 'herkes böyle bilir' demek ne kadar güvenilirdir?"
+      }
+    ];
+
+    function renderFamousExperiment(index) {
+      const exp = famousExperiments[index];
+      document.getElementById("expEmoji").textContent = exp.emoji;
+      document.getElementById("expTitle").textContent = exp.title;
+      document.getElementById("expScientist").textContent = exp.scientist;
+      document.getElementById("expYear").textContent = exp.year;
+      document.getElementById("expWhyText").textContent = exp.why;
+      document.getElementById("expTodayText").textContent = exp.today;
+      document.getElementById("expThink").textContent = exp.think;
+
+      const container = document.getElementById("expStepsContainer");
+      container.innerHTML = "";
+      exp.steps.forEach((step, i) => {
+        const div = document.createElement("div");
+        div.className = "exp-step-item";
+        div.innerHTML = `
+          <div class="exp-step-num">${i + 1}</div>
+          <div class="flex-1">
+            <p class="m-0 text-sm font-bold" style="color:var(--ink);">${step.title}</p>
+            <div class="exp-step-detail">
+              <p class="m-0 text-sm text-slate-500 mt-1.5">${step.detail}</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-down text-xs text-slate-400" style="margin-top:0.3rem;transition:transform 0.2s;"></i>
+        `;
+        div.addEventListener("click", () => {
+          div.classList.toggle("open");
+          const icon = div.querySelector(".fa-chevron-down");
+          if (icon) icon.style.transform = div.classList.contains("open") ? "rotate(180deg)" : "";
+        });
+        container.appendChild(div);
+      });
+
+      document.querySelectorAll(".exp-tab-btn").forEach((b) => b.classList.remove("active"));
+      document.querySelector(`.exp-tab-btn[data-exp="${index}"]`)?.classList.add("active");
+    }
+
+    document.querySelectorAll(".exp-tab-btn").forEach((btn) => {
+      btn.addEventListener("click", () => renderFamousExperiment(parseInt(btn.dataset.exp)));
+    });
+    renderFamousExperiment(0);
+
+    // Dünya haritası (PNG + CSS pinler)
+    const mapData = [
+      { name: "Marie Curie", country: "Polonya / Fransa", xPct: 52.5, yPct: 30, bio: "Polonya'da doğdu, Fransa'da çalıştı. Radyoaktivite araştırmalarıyla iki Nobel Ödülü kazandı.", tags: ["Fizik", "Kimya", "Nobel"] },
+      { name: "Ada Lovelace", country: "İngiltere", xPct: 48, yPct: 24, bio: "Viktorya dönemi İngiltere'sinde yaşadı. Charles Babbage ile çalışarak bilgisayar programlamanın temellerini attı.", tags: ["Matematik", "Bilgisayar"] },
+      { name: "Katherine Johnson", country: "ABD", xPct: 22, yPct: 36, bio: "NASA'da çalışarak uzay görevlerinin yörünge hesaplamalarını yaptı. Apollo programının başarısında kritik rol oynadı.", tags: ["Matematik", "Uzay", "NASA"] },
+      { name: "Rosalind Franklin", country: "İngiltere", xPct: 50, yPct: 27, bio: "Londra'da doğdu. X-ışını kristalografisi ile DNA'nın yapısını aydınlatan kritik görüntüyü elde etti.", tags: ["Biyofizik", "Kimya"] },
+      { name: "Tu Youyou", country: "Çin", xPct: 76, yPct: 35, bio: "Çin'de geleneksel tıp araştırmalarından yola çıkarak sıtma tedavisi Artemisinin'i keşfetti.", tags: ["Tıp", "Farmakoloji", "Nobel"] },
+      { name: "Chien-Shiung Wu", country: "Çin / ABD", xPct: 25, yPct: 40, bio: "Çin'de doğdu, ABD'de fizik alanında çığır açtı. Parite korunumunun ihlalini deneysel olarak kanıtladı.", tags: ["Fizik", "Nükleer"] },
+      { name: "Maryam Mirzakhani", country: "İran / ABD", xPct: 63, yPct: 36, bio: "İran doğumlu. Fields Madalyası alan ilk kadın matematikçi. Riemann yüzeyleri üzerine çalıştı.", tags: ["Matematik", "Fields"] },
+      { name: "Rachel Carson", country: "ABD", xPct: 20, yPct: 32, bio: "Amerikan biyolog ve yazar. Sessiz Bahar kitabıyla modern çevre hareketinin başlamasına öncülük etti.", tags: ["Biyoloji", "Çevre"] }
+    ];
+
+    function renderMap() {
+      const container = document.getElementById("mapContainer");
+      // Eski pinleri temizle
+      container.querySelectorAll(".map-pin").forEach((p) => p.remove());
+
+      mapData.forEach((item) => {
+        const pin = document.createElement("div");
+        pin.className = "map-pin";
+        pin.style.left = item.xPct + "%";
+        pin.style.top = item.yPct + "%";
+        pin.innerHTML = `
+          <div class="map-pin-label">${item.name}</div>
+          <div class="map-pin-dot"></div>
+        `;
+        pin.addEventListener("click", () => {
+          container.querySelectorAll(".map-pin").forEach((p) => p.classList.remove("active"));
+          pin.classList.add("active");
+          const detail = document.getElementById("mapDetail");
+          detail.classList.remove("hidden");
+          document.getElementById("mapName").textContent = item.name;
+          document.getElementById("mapCountry").textContent = item.country;
+          document.getElementById("mapBio").textContent = item.bio;
+          document.getElementById("mapTags").innerHTML = item.tags.map((t) => `<span class="tag">${t}</span>`).join("");
+          detail.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        });
+        container.appendChild(pin);
+      });
+    }
+
+    // Tüm tanımlamalar bittikten sonra çağırılması gereken render fonksiyonları
+    renderMap();
+  </script>
+</body>
+</html>
